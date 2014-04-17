@@ -75,6 +75,7 @@ class Life_Client_Core
 		class gatherRock {};
 		class gatherSand {};
 		class gatheriron {};
+		class gatherMeth {};
 	};
 	
 	class Config
@@ -308,6 +309,7 @@ class Life_Client_Core
 		class lockpick {};
 		class spikeStrip {};
 		class jerryRefuel {};
+		class weed{};
 	};
 	
 	class Dialog_Controls

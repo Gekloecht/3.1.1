@@ -56,6 +56,11 @@ switch (_var) do
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
+	case "life_inv_methu": {"Unprocessed Methamphetamine"};
+	case "life_inv_methp": {"Pure Methamphetamine"};
+	case "life_inv_storage1": {"House Storage"};
+    case "life_inv_storage2": {"Coffre de maison"};
+    case "license_civ_home": {"Home Owner License"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -79,8 +84,7 @@ switch (_var) do
 	case "license_civ_coke": {"Cocaine Training"};
 	case "license_civ_marijuana": {"Marijuana Training"};
 	case "license_civ_cement": {"Cement Mixing License"};
-	//Virtual Inventory Items
-    case "life_inv_storage1": {"House Storage"};
-    case "life_inv_storage2": {"Coffre de maison"};
-    case "license_civ_home": {"Home Owner License"};
+	case "license_civ_meth": {"Methamphetamine Training"};
+	
+    
 };

@@ -1,5 +1,6 @@
 if (side player == west) then 
 {
+	patrolmission = 0;
 	if (patrolmission == 0) then 
 	{
 		patrolrnumber = (floor(random 8) + 1);

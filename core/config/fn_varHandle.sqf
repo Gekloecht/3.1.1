@@ -62,6 +62,8 @@ switch (_mode) do
 			case "goldbar": {"life_inv_goldbar"};
 			case "storage1": {"life_inv_storage1"};
             case "storage2": {"life_inv_storage2"};
+			case "methu": {"life_inv_methu"};
+			case "methp": {"life_inv_methp"};
 		};
 	};
 	
@@ -114,7 +116,9 @@ switch (_mode) do
 			case "life_inv_rock": {"rock"};
 			case "life_inv_goldbar": {"goldbar"};
 			case "life_inv_storage1": {"storage1"};
-            case "life_inv_storage2": {"storage2"};
+            		case "life_inv_storage2": {"storage2"};
+			case "life_inv_methu": {"methu"};
+			case "life_inv_methp": {"methp"};
 		};
 	};
 };

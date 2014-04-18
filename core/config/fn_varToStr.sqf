@@ -56,7 +56,7 @@ switch (_var) do
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
-	case "life_inv_methu": {"Unprocessed Methamphetamine"};
+	case "life_inv_methu": {"Unprocessed Meth"};
 	case "life_inv_methp": {"Pure Methamphetamine"};
 	case "life_inv_storage1": {"House Storage"};
     case "life_inv_storage2": {"Coffre de maison"};

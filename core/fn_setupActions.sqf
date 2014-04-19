@@ -160,6 +160,11 @@ switch (playerSide) do
 		//Gather Meth
 		life_actions = life_actions + [player addAction["Recolter meth",life_fnc_gatherMeth,"",0,false,false,"",'
 		!life_action_in_use && (player distance (getMarkerPos "meth_area_1") < 150) && (vehicle player == player) && (life_carryWeight + (["methu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		
+		//Gather Raisin
+		life_actions = life_actions + [player addAction["Recolter raisin",life_fnc_gatherGrapes,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "grape_area_1") < 150) && (vehicle player == player) && (life_carryWeight + (["grapes"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		
 				
 		//Houses
         life_actions = life_actions + [player addAction["<t color='#FF0000'>Verouiller/Deverouiller Maison</t>",life_fnc_lockHouse,cursorTarget,10,false,false,"",

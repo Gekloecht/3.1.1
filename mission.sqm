@@ -38164,7 +38164,7 @@ class Mission
 			name="Sofia";
 			markerType="ELLIPSE";
 			type="Empty";
-			colorName="ColorRed";
+			colorName="ColorGreen";
 			a=350;
 			b=350;
 		};

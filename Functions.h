@@ -77,6 +77,7 @@ class Life_Client_Core
 		class gatheriron {};
 		class gatherMeth {};
 		class gatherGrapes {};
+		class gatherArtefact {};
 	};
 	
 	class Config

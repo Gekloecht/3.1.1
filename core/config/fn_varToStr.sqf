@@ -59,8 +59,11 @@ switch (_var) do
 	case "life_inv_methu": {"Unprocessed Meth"};
 	case "life_inv_methp": {"Pure Methamphetamine"};
 	case "life_inv_storage1": {"House Storage"};
-    case "life_inv_storage2": {"Coffre de maison"};
-    case "license_civ_home": {"Home Owner License"};
+    	case "life_inv_storage2": {"Coffre de maison"};
+    	case "life_inv_moonshine": {"Moon Shine"};
+	case "life_inv_vodka": {"Vin"};
+	case "life_inv_grapes": {"Grappes"};
+    
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -85,6 +88,7 @@ switch (_var) do
 	case "license_civ_marijuana": {"Marijuana Training"};
 	case "license_civ_cement": {"Cement Mixing License"};
 	case "license_civ_meth": {"Methamphetamine Training"};
+	case "license_civ_home": {"Home Owner License"};
 	
     
 };

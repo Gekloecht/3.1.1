@@ -45,7 +45,9 @@ class Mission
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Structures_F_Mil_Shelters",
 		"A3_Structures_F_Civ_Camping",
-		"A3_Structures_F_EPC_Civ_Accessories"
+		"A3_Structures_F_EPC_Civ_Accessories",
+		"A3_Structures_F_Wrecks",
+		"A3_Structures_F_EPB_Items_Vessels"
 	};
 	addOnsAuto[]=
 	{
@@ -83,6 +85,9 @@ class Mission
 		"A3_Boat_F_Trawler",
 		"A3_Structures_F_Civ_Camping",
 		"A3_Structures_F_EPC_Civ_Accessories",
+		"A3_Structures_F_Wrecks",
+		"A3_Structures_F_EPB_Items_Vessels",
+		"A3_Structures_F_Naval_Buoys",
 		"a3_map_altis"
 	};
 	randomSeed=2004553;
@@ -3708,7 +3713,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3073;
+		items=3119;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -36416,10 +36421,488 @@ class Mission
 			text="atm1_1_3_1_6_4_7_15";
 			init="this enableSimulation false; this allowDamage false; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
 		};
+		class Item3073
+		{
+			position[]={3824.5505,0.00015570348,10070.788};
+			azimut=-37.520302;
+			id=3292;
+			side="EMPTY";
+			vehicle="Land_MetalBarrel_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3074
+		{
+			position[]={3782.6003,0.0035167211,10058.879};
+			azimut=-37.520302;
+			id=3293;
+			side="EMPTY";
+			vehicle="Land_BarrelEmpty_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3075
+		{
+			position[]={3785.2595,0.00013819383,10042.573};
+			azimut=-37.520306;
+			offsetY=-30;
+			id=3294;
+			side="EMPTY";
+			vehicle="Land_CargoBox_V1_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3076
+		{
+			position[]={3781.9697,0.00083610462,10053.383};
+			azimut=156.9594;
+			offsetY=-30;
+			id=3295;
+			side="EMPTY";
+			vehicle="Land_Cargo20_white_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3077
+		{
+			position[]={3812.2454,0.0096431971,10068.029};
+			azimut=-222.57004;
+			offsetY=-30;
+			id=3296;
+			side="EMPTY";
+			vehicle="Land_Cargo20_yellow_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3078
+		{
+			position[]={3816.5269,0.0075629442,10052.304};
+			azimut=14.853768;
+			offsetY=-30;
+			id=3297;
+			side="EMPTY";
+			vehicle="Land_Cargo20_cyan_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3079
+		{
+			position[]={3773.5608,0.0043631485,10051.071};
+			azimut=80.937172;
+			offsetY=-30;
+			id=3298;
+			side="EMPTY";
+			vehicle="Land_Cargo40_red_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3080
+		{
+			position[]={3818.4866,0.0064554461,10069.343};
+			azimut=-64.782295;
+			offsetY=-30;
+			id=3299;
+			side="EMPTY";
+			vehicle="Land_Cargo40_military_green_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3081
+		{
+			position[]={3777.2449,0.0073346198,10038.083};
+			azimut=-140.69727;
+			offsetY=-30;
+			id=3300;
+			side="EMPTY";
+			vehicle="Land_Cargo40_white_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3082
+		{
+			position[]={3819.522,-0.00069984701,10081.326};
+			azimut=-12.520312;
+			offsetY=-30;
+			id=3301;
+			side="EMPTY";
+			vehicle="Land_WoodenBox_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3083
+		{
+			position[]={3768.8152,-0.0028284406,10072.758};
+			azimut=19.678499;
+			offsetY=-30;
+			id=3302;
+			side="EMPTY";
+			vehicle="Land_UWreck_MV22_F";
+			skill=0.60000002;
+		};
+		class Item3084
+		{
+			position[]={3798.8748,0.0060769324,10053.358};
+			azimut=-182.45;
+			offsetY=-30;
+			id=3303;
+			side="EMPTY";
+			vehicle="Land_Wreck_Traw_F";
+			skill=0.60000002;
+		};
+		class Item3085
+		{
+			position[]={3797.9053,-0.0014004044,10076.681};
+			azimut=-182.45;
+			offsetY=-30;
+			id=3304;
+			side="EMPTY";
+			vehicle="Land_Wreck_Traw2_F";
+			skill=0.60000002;
+		};
+		class Item3086
+		{
+			position[]={3780.394,0.0017342807,10042.466};
+			azimut=-37.520302;
+			id=3305;
+			side="EMPTY";
+			vehicle="Land_MetalBarrel_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3087
+		{
+			position[]={3814.1499,0.0058305929,10078.246};
+			azimut=-37.520302;
+			id=3306;
+			side="EMPTY";
+			vehicle="Land_MetalBarrel_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3088
+		{
+			position[]={3787.7417,-4.8082788e-005,10037.77};
+			azimut=-37.520302;
+			id=3307;
+			side="EMPTY";
+			vehicle="Land_BarrelEmpty_grey_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3089
+		{
+			position[]={3786.3799,0.00055157417,10084.304};
+			azimut=-37.520302;
+			id=3308;
+			side="EMPTY";
+			vehicle="Land_BarrelEmpty_grey_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3090
+		{
+			position[]={3824.5198,0.0058519845,10057.821};
+			azimut=318.33301;
+			offsetY=-30;
+			id=3309;
+			side="EMPTY";
+			vehicle="Land_UWreck_FishingBoat_F";
+			skill=0.60000002;
+		};
+		class Item3091
+		{
+			position[]={3812.0413,0.0044306377,10083.619};
+			azimut=193.41763;
+			offsetY=-30;
+			id=3310;
+			side="EMPTY";
+			vehicle="Land_WaterTank_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3092
+		{
+			position[]={3784.7769,0.0084032211,10069.191};
+			azimut=-12.520312;
+			offsetY=-30;
+			id=3311;
+			side="EMPTY";
+			vehicle="Land_WoodenBox_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3093
+		{
+			position[]={3782.4265,0.0014939508,10038.497};
+			azimut=122.40932;
+			offsetY=-30;
+			id=3312;
+			side="EMPTY";
+			vehicle="Land_WoodenBox_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3094
+		{
+			position[]={3785.7317,0.0068955021,10074.805};
+			azimut=217.71559;
+			offsetY=-30;
+			id=3313;
+			side="EMPTY";
+			vehicle="Land_WoodenBox_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3095
+		{
+			position[]={3785.1423,0.0083452091,10065.188};
+			azimut=193.418;
+			offsetY=-15;
+			id=3314;
+			side="EMPTY";
+			vehicle="Land_WaterTank_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3096
+		{
+			position[]={3710.9849,0.0010036784,10008.169};
+			azimut=-37.520302;
+			id=3315;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3097
+		{
+			position[]={3806.4395,-0.0053540142,9988.3418};
+			azimut=-37.520302;
+			id=3316;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3098
+		{
+			position[]={3683.0203,-3.2722244e-005,10030.359};
+			azimut=-37.520302;
+			id=3317;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3099
+		{
+			position[]={3852.0952,-0.0025055753,10003.053};
+			azimut=-37.520302;
+			id=3318;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3100
+		{
+			position[]={3877.1768,-0.00769646,10022.806};
+			azimut=-37.520302;
+			id=3319;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3101
+		{
+			position[]={3756.9084,-0.0046085706,9989.0117};
+			azimut=-37.520302;
+			id=3320;
+			side="EMPTY";
+			vehicle="Land_BuoyBig_F";
+			skill=0.60000002;
+		};
+		class Item3102
+		{
+			position[]={3788.7917,-0.0038712882,10088.773};
+			azimut=70.713745;
+			offsetY=-30;
+			id=3321;
+			side="EMPTY";
+			vehicle="Land_Cargo20_orange_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3103
+		{
+			position[]={3811.1843,0.0092133712,10074.826};
+			azimut=-12.5203;
+			offsetY=-30;
+			id=3322;
+			side="EMPTY";
+			vehicle="Land_Pipes_large_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3104
+		{
+			position[]={3785.3159,0.0021949958,10049.064};
+			azimut=-12.5203;
+			offsetY=-30;
+			id=3323;
+			side="EMPTY";
+			vehicle="Land_ConcretePipe_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3105
+		{
+			position[]={3805.3906,0.005319213,10091.128};
+			azimut=-37.520302;
+			id=3324;
+			side="EMPTY";
+			vehicle="Land_Tyre_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3106
+		{
+			position[]={3785.8755,0.0079122763,10060.705};
+			azimut=-37.520302;
+			id=3325;
+			side="EMPTY";
+			vehicle="Land_Tyre_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3107
+		{
+			position[]={3804.0513,0.0064542936,10088.661};
+			azimut=-37.520302;
+			id=3326;
+			side="EMPTY";
+			vehicle="Land_Tyre_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3108
+		{
+			position[]={3811.8411,0.0013425013,10049.927};
+			azimut=-37.520302;
+			id=3327;
+			side="EMPTY";
+			vehicle="Land_Tyre_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3109
+		{
+			position[]={3815.3447,0.0074702841,10073.287};
+			azimut=-37.520302;
+			id=3328;
+			side="EMPTY";
+			vehicle="Land_Tyre_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3110
+		{
+			position[]={3799.8521,0.0041518863,10090.255};
+			azimut=-37.520302;
+			offsetY=-15;
+			id=3329;
+			side="EMPTY";
+			vehicle="Land_Wreck_Skodovka_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3111
+		{
+			position[]={3794.3062,-0.0023803043,10089.156};
+			azimut=-149.22061;
+			offsetY=-15;
+			id=3330;
+			side="EMPTY";
+			vehicle="Land_Wreck_Van_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3112
+		{
+			position[]={3799.3418,0.002739592,10086.654};
+			azimut=283.15302;
+			offsetY=-15;
+			id=3331;
+			side="EMPTY";
+			vehicle="Land_Wreck_Car2_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3113
+		{
+			position[]={3783.3945,0.0022041921,10086.512};
+			azimut=193.418;
+			offsetY=-30;
+			id=3332;
+			side="EMPTY";
+			vehicle="Land_WaterTank_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3114
+		{
+			position[]={3813.6157,-0.0009012504,10090.272};
+			azimut=-149.49139;
+			offsetY=-30;
+			id=3333;
+			side="EMPTY";
+			vehicle="Land_IronPipes_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3115
+		{
+			position[]={3781.1633,0.0059481109,10082.148};
+			azimut=-12.5203;
+			offsetY=-30;
+			id=3334;
+			side="EMPTY";
+			vehicle="Land_ConcretePipe_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3116
+		{
+			position[]={3778.593,-0.00040989276,10057.45};
+			azimut=-71.673698;
+			offsetY=-30;
+			id=3335;
+			side="EMPTY";
+			vehicle="Land_IronPipes_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3117
+		{
+			position[]={3811.7053,0.0055124573,10058.056};
+			azimut=87.635445;
+			offsetY=-30;
+			id=3336;
+			side="EMPTY";
+			vehicle="Land_IronPipes_F";
+			skill=0.60000002;
+			init="this addAction[""Rechercher des artefacts"",life_fnc_gatherArtefact,"""",0,false,false,"""",'    !life_action_in_use && (player distance (getMarkerPos ""artefact_area_1"") < 150) && (vehicle player == player) && (life_carryWeight + ([""artefact""] call life_fnc_itemWeight)) <= life_maxWeight '];";
+		};
+		class Item3118
+		{
+			position[]={3818.2239,0.0040910547,10043.717};
+			azimut=223.27351;
+			offsetY=-30;
+			id=3337;
+			side="EMPTY";
+			vehicle="Land_UWreck_Heli_Attack_02_F";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=239;
+		items=241;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -37255,7 +37738,7 @@ class Mission
 		};
 		class Item103
 		{
-			position[]={11556.398,77.697838,7048.0737};
+			position[]={11556.398,77.538902,7046.8818};
 			name="weed_1";
 			text="Champ de Marijuana";
 			type="mil_dot";
@@ -37488,7 +37971,7 @@ class Mission
 		};
 		class Item133
 		{
-			position[]={20732.141,38.295795,13423.682};
+			position[]={20733.293,38.226643,13425.224};
 			name="cocaine_1";
 			text="Champ de Cocaine";
 			type="mil_dot";
@@ -38397,6 +38880,24 @@ class Mission
 			text="Distillerie vin";
 			type="mil_dot";
 			colorName="Color1_FD_F";
+		};
+		class Item239
+		{
+			position[]={3793.0869,0.0071899369,10062.57};
+			name="artefact_area_1";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorWhite";
+			a=40;
+			b=40;
+		};
+		class Item240
+		{
+			position[]={3793.3157,0.0077378955,10061.099};
+			name="artefact";
+			text="Archéologie Sous-Marine";
+			type="mil_triangle";
+			colorName="ColorBrown";
 		};
 	};
 	class Sensors

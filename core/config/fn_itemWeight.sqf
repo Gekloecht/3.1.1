@@ -53,5 +53,8 @@ switch (_item) do
 	case "goldbar": {12};
 	case "methu": {6};
 	case "methp": {4};
+	case "vodka": {4};
+	case "moonshine": {4};
+	case "grapes": {5};
 	default {1};
 };

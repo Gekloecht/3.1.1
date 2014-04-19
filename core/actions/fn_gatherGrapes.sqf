@@ -8,7 +8,7 @@ Grape Picking Function
 
 */
 private["_sum"];
-_sum = ["grapes",3,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+_sum = ["grapes",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
 if(_sum > 0) then
 {

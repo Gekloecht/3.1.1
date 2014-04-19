@@ -56,5 +56,6 @@ switch (_item) do
 	case "vodka": {4};
 	case "moonshine": {4};
 	case "grapes": {5};
+	case "artefact": {5};
 	default {1};
 };

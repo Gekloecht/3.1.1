@@ -74,6 +74,8 @@ switch (_mode) do
 			case "license_civ_cement": {_var = "cement"};
 			case "license_civ_home": {_var = "home"};
 			case "license_civ_meth": {_var = "meth"};
+			case "license_civ_grapes": {_var = "grapes"};
+			case "license_civ_moonshine": {_var = "moonshine"};
 			default {_var = ""};
 		};
 	};

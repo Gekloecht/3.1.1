@@ -146,6 +146,7 @@ life_inv_items =
 	"life_inv_moonshine",
 	"life_inv_vodka",
 	"life_inv_grapes",
+	"life_inv_artefact",
 	"life_inv_storage1",
     "life_inv_storage2"
 ];
@@ -232,7 +233,8 @@ sell_array =
 	["methp",5500],
 	["moonshine",3000],
 	["vodka",900],
-	["grapes",60]
+	["grapes",60],
+	["artefact",1500]
 
 ];
 __CONST__(sell_array,sell_array);

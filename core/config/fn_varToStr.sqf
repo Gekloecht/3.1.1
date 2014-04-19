@@ -63,6 +63,7 @@ switch (_var) do
     	case "life_inv_moonshine": {"Moon Shine"};
 	case "life_inv_vodka": {"Vin"};
 	case "life_inv_grapes": {"Grappes"};
+	case "life_inv_artefact": {"Artefact"};
     
 	
 	//License Block

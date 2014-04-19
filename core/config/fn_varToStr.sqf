@@ -89,6 +89,8 @@ switch (_var) do
 	case "license_civ_cement": {"Cement Mixing License"};
 	case "license_civ_meth": {"Methamphetamine Training"};
 	case "license_civ_home": {"Home Owner License"};
+	case "license_civ_grapes": {"Grappe Processing"};
+	case "license_civ_moonshine": {"Moonshine Processing"};
 	
     
 };

@@ -230,7 +230,7 @@ sell_array =
 	["cement",2200],
 	["methu",400],
 	["methp",5500],
-	["moonshine",1500],
+	["moonshine",3000],
 	["vodka",900],
 	["grapes",60]
 

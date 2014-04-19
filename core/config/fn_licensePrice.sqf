@@ -35,4 +35,7 @@ switch (_type) do
 	case "cement": {6500};
 	case "home": {100000};
 	case "meth": {175000};
+	case "passport": {25000};
+	case "grapes": {5000};
+	case "moonshine": {15000};
 };

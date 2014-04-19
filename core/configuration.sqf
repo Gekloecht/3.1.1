@@ -224,7 +224,7 @@ sell_array =
 	["spikeStrip",1200],
 	["cement",2200],
 	["methu",400],
-	["methp",5500]
+	["methp",3500]
 ];
 __CONST__(sell_array,sell_array);
 

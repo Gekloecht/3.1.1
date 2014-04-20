@@ -311,7 +311,11 @@ class Life_Client_Core
 		class lockpick {};
 		class spikeStrip {};
 		class jerryRefuel {};
-		class weed{};
+		class weed {};
+		class alcool {};
+		class heroine {};
+		class meth {};
+		class cocaine {};
 	};
 	
 	class Dialog_Controls

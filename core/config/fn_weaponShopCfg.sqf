@@ -1,10 +1,10 @@
 /*
 	File: fn_weaponShopCfg.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Master configuration file for the weapon shops.
-	
+
 	Return:
 	String: Close the menu
 	Array: 
@@ -23,108 +23,291 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != west): {"You are not a cop!"};
+			case (playerSide != west): {"Interdit aux civils !"};
 			default
 			{
-				["Altis Cop Shop",
+				["Equipement General",
 					[
 						["ItemWatch",nil,50],
 						["ItemCompass",nil,50],
-						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
-						["optic_ACO_grn_smg",nil,2000],
-						["optic_Aco_smg",nil,2000],
-						["optic_ACO_grn",nil,3200],
-						["optic_Aco",nil,3200],
-						["optic_LRPS",nil,50000],
-						["optic_SOS",nil,30000],
-						["optic_MRCO",nil,10000],
-						["optic_Arco",nil,10000],
-						["optic_Hamr",nil,10000],
-						["acc_pointer_IR",nil,4200],
 						["Binocular",nil,150],
 						["ItemMap",nil,50],
 						["ItemGPS",nil,150],
 						["ToolKit",nil,250],
 						["FirstAidKit",nil,150],
 						["Medikit",nil,2000],
-						["SmokeShell",nil,100],
 						["NVGoggles",nil,2500],
-						["MineDetector",nil,1000],
-						["Rangefinder",nil,3400],
-						["B_UavTerminal",nil,5200],
-						["hgun_P07_snds_F","Stun Pistol",2000],
-						["hgun_P07_F",nil,3500],
-						["hgun_ACPC2_F",nil,4500],
+						["Rangefinder",nil,3400]
+					]
+				];
+			};
+		};
+	};
+
+	case "cop_recrue":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Armurerie pour recrue",
+					[
 						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50]
+					]
+				];
+			};
+		};
+	};
+
+	case "cop_policier":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Armurerie pour policier",
+					[
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
 						["SMG_02_F",nil,4600],
+						["30Rnd_9x21_Mag",nil,60]
+					]
+				];
+			};
+		};
+	};
+
+	case "cop_brigadier":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Equipement Armurerie Brigadier/Brigadier-Chef",
+					[
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
+						["SMG_02_F",nil,4600],
+						["30Rnd_9x21_Mag",nil,60],
+						["arifle_MX_Black_F",nil,6200],
+						["arifle_MXC_Black_F",nil,6500],
+						["30Rnd_65x39_caseless_mag",nil,80],
+						["acc_flashlight",nil,750],
+						["optic_Holosight",nil,1200],
+						["optic_ACO_grn_smg",nil,2000],
+						["optic_Aco_smg",nil,2000],
+						["optic_ACO_grn",nil,3200],
+						["optic_Aco",nil,3200],
+						["optic_MRCO",nil,10000],
+						["optic_Hamr",nil,10000], 
+						["optic_Arco",nil,10000],
+						["SmokeShell",nil,100]
+					]
+				];
+			};
+		};
+	};
+
+	case "cop_major":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Armurerie pour major",
+					[
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
+						["SMG_02_F",nil,4600],
+						["30Rnd_9x21_Mag",nil,60],
 						["arifle_MX_Black_F",nil,6200],
 						["arifle_MXC_Black_F",nil,6500],
 						["arifle_MXM_Black_F",nil,7300],
-						["srifle_EBR_F",nil,8200],
-						["16Rnd_9x21_Mag",nil,50],
-						["9Rnd_45ACP_Mag",nil,70],
-						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
-						["30Rnd_9x21_Mag",nil,60],
 						["30Rnd_65x39_caseless_mag",nil,80],
+						["srifle_EBR_F",nil,8200],
 						["20Rnd_762x51_Mag",nil,90],
-						["srifle_EBR_DMS_pointer_snds_F",nil,2000],
-						["muzzle_snds_L",nil,650]
-					]
-				];
-			};
-		};
-	};
-
-	case "cop_patrol":
-	{
-		switch(true) do
-		{
-			case (playerSide != west): {"You are not a cop!"};
-			case (life_coplevel < 2): {"Vous n'ete pas brigadier!"};
-			default
-			{
-				["Altis Patrol Officer Shop",
-					[
-						["arifle_MX_F",nil,35000],
-						["SMG_02_ACO_F",nil,30000],
-						["MineDetector",nil,1000],
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
-						["optic_Arco",nil,2500],
-						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_9x21_Mag",nil,250]
+						["optic_ACO_grn_smg",nil,2000],
+						["optic_Aco_smg",nil,2000],
+						["optic_ACO_grn",nil,3200],
+						["optic_Aco",nil,3200],
+						["optic_MRCO",nil,10000],
+						["optic_Hamr",nil,10000], 
+						["optic_Arco",nil,10000],
+						["SmokeShell",nil,100],										
+						["optic_LRPS",nil,50000],
+						["optic_SOS",nil,30000],
+						["B_UavTerminal",nil,5200],
+						["acc_pointer_IR",nil,4200]
 					]
 				];
 			};
 		};
 	};
 
-	case "cop_sergeant":
+	case "cop_lieutenant":
 	{
 		switch(true) do
 		{
-			case (playerSide != west): {"Vous n'ete pas policier!"};
-			case (life_coplevel < 3): {"Vous n'ete pas sergent!"};
+			case (playerSide != west): {"Interdit aux civils !"};
 			default
 			{
-				["Altis Sergeant Officer Shop",
+				["Armurerie pour lieutenant",
 					[
-						["SMG_02_ACO_F",nil,15000],
-						["hgun_ACPC2_F",nil,17500],
-						["arifle_MXC_F",nil,30000],
-						["optic_Arco",nil,2500],
-						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,100],
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
+						["SMG_02_F",nil,4600],
 						["30Rnd_9x21_Mag",nil,60],
-						["9Rnd_45ACP_Mag",nil,200]
+						["arifle_MX_Black_F",nil,6200],
+						["arifle_MXC_Black_F",nil,6500],
+						["arifle_MXM_Black_F",nil,7300],
+						["30Rnd_65x39_caseless_mag",nil,80],
+						["srifle_EBR_F",nil,8200],
+						["20Rnd_762x51_Mag",nil,90],
+						["LMG_Mk200_F",nil,15000],
+						["200Rnd_65x39_cased_Box",nil,500],
+						["acc_flashlight",nil,750],
+						["optic_Holosight",nil,1200],
+						["optic_ACO_grn_smg",nil,2000],
+						["optic_Aco_smg",nil,2000],
+						["optic_ACO_grn",nil,3200],
+						["optic_Aco",nil,3200],
+						["optic_MRCO",nil,10000],
+						["optic_Hamr",nil,10000], 
+						["optic_Arco",nil,10000],
+						["SmokeShell",nil,100],										
+						["optic_LRPS",nil,50000],
+						["optic_SOS",nil,30000],
+						["B_UavTerminal",nil,5200],
+						["acc_pointer_IR",nil,4200]
 					]
 				];
 			};
 		};
 	};
-	
+
+	case "cop_capitaine":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Armurerie pour capitaine",
+					[
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
+						["SMG_02_F",nil,4600],
+						["30Rnd_9x21_Mag",nil,60],
+						["arifle_MX_Black_F",nil,6200],
+						["arifle_MXC_Black_F",nil,6500],
+						["arifle_MXM_Black_F",nil,7300],
+						["30Rnd_65x39_caseless_mag",nil,80],
+						["srifle_EBR_F",nil,8200],
+						["20Rnd_762x51_Mag",nil,90],
+						["LMG_Mk200_F",nil,15000],
+						["200Rnd_65x39_cased_Box",nil,500],
+						["srifle_LRR_F",nil,15000],
+						["7Rnd_408_Mag",nil,800],
+						["acc_flashlight",nil,750],
+						["optic_Holosight",nil,1200],
+						["optic_ACO_grn_smg",nil,2000],
+						["optic_Aco_smg",nil,2000],
+						["optic_ACO_grn",nil,3200],
+						["optic_Aco",nil,3200],
+						["optic_MRCO",nil,10000],
+						["optic_Hamr",nil,10000], 
+						["optic_Arco",nil,10000],
+						["SmokeShell",nil,100],										
+						["optic_LRPS",nil,50000],
+						["optic_SOS",nil,30000],
+						["B_UavTerminal",nil,5200],
+						["acc_pointer_IR",nil,4200]
+					]
+				];
+			};
+		};
+	};
+
+	case "cop_admin":
+	{
+		switch(true) do
+		{
+			case (playerSide != west): {"Interdit aux civils !"};
+			default
+			{
+				["Armurerie pour commandant",
+					[
+						["arifle_sdar_F","Taser Rifle",2500],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",50],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,4500],
+						["9Rnd_45ACP_Mag",nil,70],
+						["SMG_02_F",nil,4600],
+						["30Rnd_9x21_Mag",nil,60],
+						["arifle_MX_Black_F",nil,6200],
+						["arifle_MXC_Black_F",nil,6500],
+						["arifle_MXM_Black_F",nil,7300],
+						["30Rnd_65x39_caseless_mag",nil,80],
+						["srifle_EBR_F",nil,8200],
+						["20Rnd_762x51_Mag",nil,90],
+						["LMG_Mk200_F",nil,15000],
+						["200Rnd_65x39_cased_Box",nil,500],
+						["srifle_LRR_F",nil,15000],
+						["7Rnd_408_Mag",nil,800],
+						["acc_flashlight",nil,750],
+						["optic_Holosight",nil,1200],
+						["optic_ACO_grn_smg",nil,2000],
+						["optic_Aco_smg",nil,2000],
+						["optic_ACO_grn",nil,3200],
+						["optic_Aco",nil,3200],
+						["optic_MRCO",nil,10000],
+						["optic_Hamr",nil,10000], 
+						["optic_Arco",nil,10000],
+						["SmokeShell",nil,100],										
+						["optic_LRPS",nil,50000],
+						["optic_SOS",nil,30000],
+						["B_UavTerminal",nil,5200],
+						["acc_pointer_IR",nil,4200],		
+						["optic_DMS",nil,1200]
+					]
+				];
+			};
+		};
+	};
+
+
+
+
 	case "rebel":
 	{
 		switch(true) do
@@ -153,7 +336,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "gun":
 	{
 		switch(true) do
@@ -179,7 +362,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "donator":
 	{
 				["Donator Shop",
@@ -211,7 +394,7 @@ switch(_shop) do
 					]
 				];
 	};
-	
+
 	case "genstore":
 	{
 		["Altis General Store",

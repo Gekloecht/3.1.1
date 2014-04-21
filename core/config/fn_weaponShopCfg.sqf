@@ -249,6 +249,7 @@ switch(_shop) do
 						["SmokeShell",nil,100],										
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
+						["optic_tws",nil,30000],
 						["B_UavTerminal",nil,5200],
 						["acc_pointer_IR",nil,4200]
 					]

@@ -232,7 +232,7 @@ sell_array =
 	["spikeStrip",1200],
 	["cement",2200],
 	["methu",400],
-	["methp",7500],
+	["methp",9000],
 	["moonshine",3000],
 	["vodka",900],
 	["grapes",60],

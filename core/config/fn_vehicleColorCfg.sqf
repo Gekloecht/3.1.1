@@ -37,6 +37,15 @@ switch (_vehicle) do
 			["#(ai,64,64,1)Fresnel(1.3,7)","cop"]
 		];
 	};
+	
+	case "I_G_Offroad_01_F":
+	{
+		_ret = 
+		[
+			["texture\offroad_rock.jpg","civ"],
+			["texture\offroad_bull.jpg","civ"]
+		];
+	};
 		
 	case "C_Offroad_01_F":
 	{

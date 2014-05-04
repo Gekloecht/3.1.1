@@ -20,7 +20,8 @@ switch (_shop) do
 			["C_Hatchback_01_F",9500],
 			["C_Offroad_01_F",12500],
 			["C_SUV_01_F",35000],
-			["C_Van_01_transport_F",40000]
+			["C_Van_01_transport_F",40000],
+			["I_G_Offroad_01_F",65000]
 		];
 	}; 
 	
@@ -32,7 +33,8 @@ switch (_shop) do
 			["C_Hatchback_01_F",9500],
 			["C_Offroad_01_F",12500],
 			["C_SUV_01_F",35000],
-			["C_Van_01_transport_F",40000]
+			["C_Van_01_transport_F",40000],
+			["I_G_Offroad_01_F",65000]
 		];
 	};
 	
@@ -44,7 +46,8 @@ switch (_shop) do
 			["C_Hatchback_01_F",9500],
 			["C_Offroad_01_F",12500],
 			["C_SUV_01_F",35000],
-			["C_Van_01_transport_F",40000]
+			["C_Van_01_transport_F",40000],
+			["I_G_Offroad_01_F",65000]
 		];
 	}; 
 	
@@ -56,7 +59,8 @@ switch (_shop) do
 			["C_Hatchback_01_F",9500],
 			["C_Offroad_01_F",12500],
 			["C_SUV_01_F",35000],
-			["C_Van_01_transport_F",40000]
+			["C_Van_01_transport_F",40000],
+			["I_G_Offroad_01_F",65000]
 		];
 	}; 
 	
@@ -66,7 +70,8 @@ switch (_shop) do
 		[
 			["B_Quadbike_01_F",500],
 			["C_Offroad_01_F",2500],
-			["C_SUV_01_F",20000]
+			["C_SUV_01_F",20000],
+			["I_G_Offroad_01_F",45000]
 		];
 
 		if(__GETC__(life_donator) > 1) then
@@ -89,7 +94,8 @@ switch (_shop) do
 		[
 			["B_Quadbike_01_F",500],
 			["C_Offroad_01_F",2500],
-			["C_SUV_01_F",20000]
+			["C_SUV_01_F",20000],
+			["I_G_Offroad_01_F",45000]
 		];
 
 		if(__GETC__(life_donator) > 1) then

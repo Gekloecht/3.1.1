@@ -12,6 +12,15 @@ _color = "";
 
 switch (_vehicle) do
 {
+	case "I_G_Offroad_01_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Rockstar";};
+			case 1: {_color = "Red Bull";};
+		};
+	};
+	
 	case "C_Offroad_01_F" :
 	{
 		switch (_index) do

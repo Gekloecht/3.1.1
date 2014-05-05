@@ -174,6 +174,7 @@ class Life_Client_Core
 		class pulloutVeh {};
 		class nearUnits {};
 		class fedSuccess {};
+		class handleFlashbang {};
 	};
 	
 	class Housing
@@ -316,6 +317,8 @@ class Life_Client_Core
 		class heroine {};
 		class meth {};
 		class cocaine {};
+		class bankalarmsound {};
+		class CarAlarmSound {};
 	};
 	
 	class Dialog_Controls

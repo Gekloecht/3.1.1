@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_onRespawn.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -5,6 +6,7 @@
 	Description:
 	Execute various actions when the _unit respawns.
 */
+
 private["_unit","_corpse","_handle","_spawn"];
 _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _corpse = [_this,1,objNull,[objNull]] call BIS_fnc_param;
@@ -55,3 +57,10 @@ cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
 [1,true] call life_fnc_sessionHandle;
+
+//Coptags
+if(playerSide == west) then {
+	private["_getRank"];
+	_getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; case 8: {8}; default {0};};
+	player setVariable["coplevel",_getRank,TRUE];
+};

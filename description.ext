@@ -92,6 +92,29 @@ class CfgSounds
     sound[] = {"\sounds\eat.ogg", 0.95, 0.95};
     titles[] = {};
   };
+  
+  class Flashbang
+  {
+    name = "Flashbang";
+    sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  
+  class car_alarm
+	{
+		name="car_alarm";
+		sound[] = {"\sounds\alarmevoiture.ogg", 1, 1};
+		titles[] = {};
+	
+	};
+	
+	class bank_alarm
+  {
+    name = "bank_alarm";
+    sound[] = {"\sounds\bank.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  
 };
 
 class CfgNotifications

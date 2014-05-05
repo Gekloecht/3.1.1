@@ -34,7 +34,12 @@ switch (_filter) do
 			["U_OG_Guerilla3_2","Hunter Green",500],
 			["U_IG_Guerilla2_1","Buttonup Black",500],
 			["U_IG_Guerilla2_2","Buttonup Checked",500],
-			["U_IG_Guerilla2_3","Buttonup Navy",500]
+			["U_IG_Guerilla2_3","Buttonup Navy",500],
+			["U_OrestesBody","Surfing On Land",1100],
+			["U_NikosAgedBody","Costard cravate",5000],
+			["U_C_WorkerCoveralls","Tenue de garagiste",5000],
+			["U_C_Journalist","Tenue de journaliste",10000]
+			
 		];
 	};
 	
@@ -67,7 +72,9 @@ switch (_filter) do
 			["H_Watchcap_khk",nil,50],
 			["H_Watchcap_sgg",nil,50],
 			["H_Watchcap_camo",nil,50],
-			["H_Hat_checker",nil,50]
+			["H_Hat_checker",nil,50],
+			["H_Cap_press","Casquette de journaliste",3000]
+			
 		];
 	};
 	
@@ -95,7 +102,8 @@ switch (_filter) do
 	case 3:
 	{
 		[
-			["V_BandollierB_cbr",nil,4500]
+			["V_BandollierB_cbr",nil,4500],
+			["V_Press_F","Gilet de journaliste",50000]
 		];
 	};
 	

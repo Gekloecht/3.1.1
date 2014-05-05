@@ -28,6 +28,7 @@ switch (_vehicle) do
 		_ret =
 		[
 			["texture\hayon_monster.jpg","civ"],
+			["texture\hayon_sport_police.jpg","cop"],
 			[_path + "hatchback_01_ext_sport02_co.paa","civ"],
 			[_path + "hatchback_01_ext_sport03_co.paa","civ"],
 			[_path + "hatchback_01_ext_sport04_co.paa","civ"],
@@ -40,13 +41,13 @@ switch (_vehicle) do
 	
 	case "I_G_Offroad_01_F":
 	{
-		_ret = 
-		[
-			["texture\offroad_rock.jpg","civ"],
-			["texture\offroad_bull.jpg","civ"]
-		];
-	};
-		
+ 		_ret = 
+ 		[
+ 			["texture\offroad_rock.jpg","civ"],
+ 			["texture\offroad_bull.jpg","civ"]
+ 		];
+ 	};
+	
 	case "C_Offroad_01_F":
 	{
 		_ret = 
@@ -72,7 +73,8 @@ switch (_vehicle) do
 	case "C_Hatchback_01_F":
 	{
 		_ret =
-		[
+		[	
+			["texture\hayon_police.jpg","cop"],
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base01_co.paa","civ"],
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base02_co.paa","civ"],
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base03_co.paa","civ"],

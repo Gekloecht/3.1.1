@@ -1,10 +1,10 @@
 /*
 	File: fn_weaponShopCfg.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Master configuration file for the weapon shops.
-
+	
 	Return:
 	String: Close the menu
 	Array: 
@@ -43,7 +43,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "cop_recrue":
 	{
 		switch(true) do
@@ -62,7 +62,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "cop_policier":
 	{
 		switch(true) do
@@ -85,7 +85,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "cop_brigadier":
 	{
 		switch(true) do
@@ -121,7 +121,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "cop_major":
 	{
 		switch(true) do
@@ -153,18 +153,18 @@ switch(_shop) do
 						["optic_Aco",nil,3200],
 						["optic_MRCO",nil,10000],
 						["optic_Hamr",nil,10000], 
-						["optic_Arco",nil,10000],
-						["SmokeShell",nil,100],										
+						["optic_Arco",nil,10000],																
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
 						["B_UavTerminal",nil,5200],
-						["acc_pointer_IR",nil,4200]
+						["acc_pointer_IR",nil,4200],
+						["SmokeShell",nil,100]
 					]
 				];
 			};
 		};
 	};
-
+	
 	case "cop_lieutenant":
 	{
 		switch(true) do
@@ -198,18 +198,19 @@ switch(_shop) do
 						["optic_Aco",nil,3200],
 						["optic_MRCO",nil,10000],
 						["optic_Hamr",nil,10000], 
-						["optic_Arco",nil,10000],
-						["SmokeShell",nil,100],										
+						["optic_Arco",nil,10000],															
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
 						["B_UavTerminal",nil,5200],
-						["acc_pointer_IR",nil,4200]
+						["acc_pointer_IR",nil,4200],
+						["MiniGrenade","Flashbang",300],
+						["SmokeShell",nil,100]
 					]
 				];
 			};
 		};
 	};
-
+	
 	case "cop_capitaine":
 	{
 		switch(true) do
@@ -245,19 +246,20 @@ switch(_shop) do
 						["optic_Aco",nil,3200],
 						["optic_MRCO",nil,10000],
 						["optic_Hamr",nil,10000], 
-						["optic_Arco",nil,10000],
-						["SmokeShell",nil,100],										
+						["optic_Arco",nil,10000],															
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
 						["optic_tws",nil,40000],
 						["B_UavTerminal",nil,5200],
-						["acc_pointer_IR",nil,4200]
+						["acc_pointer_IR",nil,4200],
+						["MiniGrenade","Flashbang",300],
+						["SmokeShell",nil,100]
 					]
 				];
 			};
 		};
 	};
-
+	
 	case "cop_admin":
 	{
 		switch(true) do
@@ -293,23 +295,24 @@ switch(_shop) do
 						["optic_Aco",nil,3200],
 						["optic_MRCO",nil,10000],
 						["optic_Hamr",nil,10000], 
-						["optic_Arco",nil,10000],
-						["SmokeShell",nil,100],										
+						["optic_Arco",nil,10000],														
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
 						["optic_tws",nil,40000],
 						["B_UavTerminal",nil,5200],
-						["acc_pointer_IR",nil,4200],		
-						["optic_DMS",nil,1200]
+						["acc_pointer_IR",nil,4200],							
+						["optic_DMS",nil,1200],
+						["MiniGrenade","Flashbang",300],
+						["SmokeShell",nil,100]
 					]
 				];
 			};
 		};
 	};
+	
+	
 
-
-
-
+		
 	case "rebel":
 	{
 		switch(true) do
@@ -338,7 +341,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "gun":
 	{
 		switch(true) do
@@ -364,7 +367,7 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "donator":
 	{
 				["Donator Shop",
@@ -376,6 +379,7 @@ switch(_shop) do
 						["LMG_Mk200_F",nil,200000],
 						["LMG_Zafir_F",nil,350000],
 						["srifle_GM6_F",nil,350000],
+						["Rangefinder",nil,50000],
 						["optic_LRPS",nil,50000],
 						["optic_SOS",nil,30000],
 						["optic_MRCO",nil,10000],
@@ -392,11 +396,12 @@ switch(_shop) do
 						["30Rnd_556x45_Stanag",nil,70],
 						["200Rnd_65x39_cased_Box_Tracer",nil,200],
 						["150Rnd_762x51_Box_Tracer",nil,200],
-						["5Rnd_127x108_Mag",nil,200]
+						["5Rnd_127x108_Mag",nil,200],
+						["Rangefinder",nil,3400]
 					]
 				];
 	};
-
+	
 	case "genstore":
 	{
 		["Altis General Store",

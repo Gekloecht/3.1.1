@@ -15,6 +15,7 @@ closeDialog 0;
 _dice = random(100);
 
 life_action_inUse = true;
+[[_car],"life_fnc_CarAlarmSound",nil,true] spawn life_fnc_MP;
 for "_i" from 0 to 3 do
 {
 	if(player distance _car > 10) exitWith {};
@@ -29,13 +30,18 @@ if(player distance _car > 10) exitWith {life_action_inUse = false; titleText["Th
 life_action_inUse = false;
 if(_dice < 30) then
 {
+	
 	titleText["You now have keys to this vehicle.","PLAIN"];
 	life_vehicles set[count life_vehicles,_car];
 	[[getPlayerUID player,name player,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	
+
 }
 	else
 {
+	
 	[[getPlayerUID player,name player,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	[[0,format["%1 was seen trying to lockpick a car.",name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 	titleText["The lockpick broke.","PLAIN"];
+	
 };

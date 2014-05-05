@@ -15,6 +15,7 @@ _used = (_vehicle getVariable "Trunk") select 1;
 switch ((typeOf _vehicle)) do
 {
 	case "C_Offroad_01_F": {_weight = 65;};
+	case "I_G_Offroad_01_F": {_weight = 75;};
 	case "B_G_Offroad_01_F": {_weight = 65;};
 	case "B_Quadbike_01_F": {_weight = 25;};
 	case "I_Truck_02_covered_F": {_weight = 250;};

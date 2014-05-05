@@ -52,10 +52,5 @@ if(!_preset) then
 			_vehicle animate ["HideBumper1", 0];
 			_vehicle setVariable["lights",false,true];
 		};
-		
-		case "rally_offroad":
-		{
-			_vehicle animate ["HideBackpacks", 1];
-		};
 	};
 };

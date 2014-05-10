@@ -148,8 +148,8 @@ life_inv_items =
 	"life_inv_grapes",
 	"life_inv_artefact",
 	"life_inv_storage1",
-        "life_inv_storage2",
-        "life_inv_ephedrine",
+    "life_inv_storage2",
+    "life_inv_ephedrine",
 	"life_inv_phosphore"
 ];
 
@@ -182,7 +182,9 @@ life_licenses =
 	["license_civ_home", "civ"],
 	["license_civ_meth","civ"],
 	["license_civ_grapes","civ"],
-	["license_civ_moonshine","civ"]
+	["license_civ_moonshine","civ"],
+	["license_civ_presse","civ"],
+	["license_civ_tbs","civ"]
 ];
 
 //Setup License Variables
@@ -232,7 +234,7 @@ sell_array =
 	["spikeStrip",1200],
 	["cement",2200],
 	["methu",400],
-	["methp",7500],
+	["methp",9000],
 	["moonshine",3000],
 	["vodka",900],
 	["grapes",60],
@@ -342,7 +344,11 @@ life_garage_prices =
 	["C_Boat_Civil_01_police_F",3500],
 	["B_Boat_Armed_01_minigun_F",16500],
 	["B_SDV_01_F",25000],
-	["B_MRAP_01_F",7500]
+	["B_MRAP_01_F",7500],
+	["O_Truck_03_ammo_F",25000],
+	["O_Truck_03_transport_F",25000],
+	["O_Truck_03_covered_F",25000],
+	["B_Truck_01_covered_F",25000]
 ];
 __CONST__(life_garage_prices,life_garage_prices);
 
@@ -371,6 +377,10 @@ life_garage_sell =
 	["C_Boat_Civil_01_police_F",4950],
 	["B_Boat_Armed_01_minigun_F",21000],
 	["B_SDV_01_F",45000],
-	["B_MRAP_01_F",10000]
+	["B_MRAP_01_F",10000],
+	["O_Truck_03_ammo_F",250000],
+	["O_Truck_03_transport_F",250000],
+	["O_Truck_03_covered_F",250000],
+	["B_Truck_01_covered_F",250000]
 ];
 __CONST__(life_garage_sell,life_garage_sell);

@@ -335,7 +335,8 @@ switch(_shop) do
 						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
 						["10Rnd_762x51_Mag",nil,500],
-						["30Rnd_65x39_caseless_green",nil,275]
+						["30Rnd_65x39_caseless_green",nil,275],
+						["SmokeShellRed","Fumigene rouge",5000]
 					]
 				];
 			};
@@ -353,15 +354,18 @@ switch(_shop) do
 				["Billy Joe's Firearms",
 					[
 						["hgun_Rook40_F",nil,6500],
-						["hgun_Pistol_heavy_02_F",nil,9850],
-						["hgun_ACPC2_F",nil,11500],
-						["hgun_PDW2000_F",nil,20000],
-						["optic_ACO_grn_smg",nil,2500],
-						["V_Rangemaster_belt",nil,4900],
 						["16Rnd_9x21_Mag",nil,25],
-						["9Rnd_45ACP_Mag",nil,45],
+						["hgun_Pistol_heavy_02_F",nil,9850],
 						["6Rnd_45ACP_Cylinder",nil,50],
-						["30Rnd_9x21_Mag",nil,75]
+						["hgun_ACPC2_F",nil,11500],
+						["9Rnd_45ACP_Mag",nil,45],
+						["hgun_PDW2000_F",nil,20000],
+						["30Rnd_9x21_Mag",nil,75],
+						["SMG_01_F",nil,28000],
+						["30Rnd_45ACP_Mag_SMG_01_tracer_green",nil,60],
+						["optic_ACO_grn_smg",nil,2500],
+						["V_Rangemaster_belt",nil,4900]
+						
 					]
 				];
 			};
@@ -396,8 +400,8 @@ switch(_shop) do
 						["30Rnd_556x45_Stanag",nil,70],
 						["200Rnd_65x39_cased_Box_Tracer",nil,200],
 						["150Rnd_762x51_Box_Tracer",nil,200],
-						["5Rnd_127x108_Mag",nil,200],
-						["Rangefinder",nil,3400]
+						["5Rnd_127x108_Mag",nil,200]
+						
 					]
 				];
 	};

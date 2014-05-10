@@ -38,4 +38,6 @@ switch (_type) do
 	case "passport": {25000};
 	case "grapes": {5000};
 	case "moonshine": {15000};
+	case "presse": {250000};
+	case "tbs": {30000000};
 };

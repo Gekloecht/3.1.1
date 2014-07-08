@@ -5,7 +5,7 @@
 	Description:
 	Main key handler for event 'keyDown'
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked"];
+private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
 _ctrl = _this select 0;
 _code = _this select 1;
 _shift = _this select 2;
@@ -14,16 +14,65 @@ _alt = _this select 4;
 _speed = speed cursorTarget;
 _handled = false;
 
+_interactionKey = if(count (actionKeys "User10") == 0) then {219} else {(actionKeys "User10") select 0};
+_mapKey = actionKeys "ShowMap" select 0;
 //hint str _code;
-if(life_action_inUse) exitWith {_handled};
+_interruptionKeys = [17,30,31,32]; //A,S,W,D
+
+if(life_action_inUse) exitWith {
+	if(!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
+	_handled;
+};
 
 switch (_code) do
 {
+	//Space key for Jumping
+	case 57:
+	{
+		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then {
+			[player,true] spawn life_fnc_jumpFnc; //Local execution
+			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP; //Global execution 
+			_handled = true;
+		};
+	};
+	
+	//Map Key
+	case _mapKey:
+	{
+		switch (playerSide) do 
+		{
+			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
+			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
+		};
+	};
+	
+	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
+	case _interactionKey:
+	{
+		if(!life_action_inUse) then {
+			if(playerSide == west) then
+			{
+				player setObjectTextureGlobal [0, "cop.jpg"];
+			};
+			if(playerSide == independent) then
+			{
+				player setObjectTextureGlobal [0, "textures\medic_uniform.jpg"];
+			};
+			[] spawn 
+			{
+				private["_handle"];
+				_handle = [] spawn life_fnc_actionKeyHandler;
+				waitUntil {scriptDone _handle};
+				life_action_inUse = false;
+			};
+		};
+	};
+	
 	//Restraining (Shift + R)
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
 		};
@@ -67,7 +116,20 @@ switch (_code) do
 		};
 	};
 	//L Key?
-	case 38: { if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };};
+	case 38: 
+	{
+		//If cop run checks for turning lights on.
+		if(_shift && playerSide != civilian) then {
+			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
+				if(!isNil {vehicle player getVariable "lights"}) then {
+					[vehicle player] call life_fnc_sirenLights;
+					_handled = true;
+				};
+			};
+		};
+		
+		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
+	};
 	//Y Player Menu
 	case 21:
 	{
@@ -99,7 +161,7 @@ switch (_code) do
 	//F Key
 	case 33:
 	{
-		if(playerSide == west && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
+		if(playerSide != civilian && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
 			{
@@ -137,30 +199,35 @@ switch (_code) do
 			};
 			
 			_locked = locked _veh;
-
-            _index = -1;
-			_owners = _veh getVariable ["vehicle_info_owners",[]];
-			for "_i" from 0 to ((count _owners) - 1) do {
-				if((_owners select _i) select 0 == getPlayerUID player) then {_index = _i;};
-            };
 			
-			if(((_index > -1 )||(_veh in life_vehicles)) && player distance _veh < 10) then
+			if(_veh in life_vehicles && player distance _veh < 8) then
 			{
 				if(_locked == 2) then
 				{
-					_veh lock 0;
-					[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn BIS_fnc_mp;
-					_veh say3D "Beep" spawn BIS_fnc_mp;
-					systemChat "Vous avez deverrouillé votre véhicule.";
+					if(local _veh) then
+					{
+						_veh lock 0;
+					}
+						else
+					{
+						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+					};
+					systemChat "Vous avez déverouiller votre vehicule.";
+					_veh say3D "Beep";
 				}
 					else
 				{
-					_veh lock 2;
-					[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn BIS_fnc_mp;
-					_veh say3D "BeepBeep" spawn BIS_fnc_mp;
-					systemChat "Vous avez verrouillé votre véhicule.";
+					if(local _veh) then
+					{
+						_veh lock 2;
+					}
+						else
+					{
+						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+					};
+					systemChat "Vous avez verouiller votre vehicule.";
+					_veh say3D "BeepBeep";
 				};
-				_veh setVariable["idleTime",time,true];
 			};
 		};
 	};

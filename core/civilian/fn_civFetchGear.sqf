@@ -1,9 +1,10 @@
 /*
-        File: fn_civFetchGear.sqf
-        Author: Bryan "Tonic" Boardwine
-        
-        Description:
-        Fetches specific key items from the civilian for a persistent state.
+    File: fn_civFetchGear.sqf
+    Author: Bryan "Tonic" Boardwine
+    Full Gear/Y-Menu Save by Vampire
+    
+    Description:
+    Saves the players gear for syncing to the database for persistence.
 */
 private["_ret","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled"];
 _ret = [];

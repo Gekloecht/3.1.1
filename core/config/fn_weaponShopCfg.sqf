@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_weaponShopCfg.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -311,7 +312,29 @@ switch(_shop) do
 	};
 	
 	
-
+	case "medic":
+	{
+		switch(true) do
+		{
+			case (playerSide != independent): {"Réservé aux medics !"};
+			default
+			{
+				["Medic Shop",
+					[
+						["ItemWatch",nil,50],
+						["ItemCompass",nil,50],
+						["Binocular",nil,150],
+						["ItemMap",nil,50],
+						["ItemGPS",nil,150],
+						["ToolKit",nil,250],
+						["FirstAidKit",nil,150],
+						["Medikit",nil,2000],
+						["NVGoggles",nil,2500]
+					]
+				];
+			};
+		};
+	};
 		
 	case "rebel":
 	{
@@ -421,6 +444,27 @@ switch(_shop) do
 				["Chemlight_yellow",nil,300],
 				["Chemlight_green",nil,300],
 				["Chemlight_blue",nil,300]
+			]
+		];
+	};
+	
+	case "kartstore":
+	{
+		["Altis Karting Store",
+			[
+				["ItemWatch",nil,50],
+			    ["ItemCompass",nil,50],
+				["Binocular",nil,150],
+				["ItemGPS",nil,100],
+				["ToolKit",nil,250],
+				["FirstAidKit",nil,150],
+				["NVGoggles",nil,2000],
+				["Chemlight_red",nil,300],
+				["Chemlight_yellow",nil,300],
+				["Chemlight_green",nil,300],
+				["Chemlight_blue",nil,300],
+				["hgun_Pistol_Signal_F",nil,50000],
+				["6Rnd_RedSignal_F",nil,150]
 			]
 		];
 	};

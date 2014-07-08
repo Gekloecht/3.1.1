@@ -7,6 +7,7 @@
 */
 private["_spCfg","_sp","_spawnPos"];
 closeDialog 0;
+cutText ["","BLACK IN"];
 if(count life_spawn_point == 0) then
 {
 	private["_sp","_spCfg"];
@@ -27,7 +28,7 @@ if(count life_spawn_point == 0) then
 	{
 		player setPos (getMarkerPos (_sp select 0));
 	};
-	titleText[format["You have spawned at %1",_sp select 1],"BLACK IN"];
+	titleText[format["%2 %1",_sp select 1,localize "STR_Spawn_Spawned"],"BLACK IN"];
 }
 	else
 {
@@ -45,7 +46,13 @@ if(count life_spawn_point == 0) then
 	{
 		player setPos (getMarkerPos (life_spawn_point select 0));
 	};
-	titleText[format["You have spawned at %1",life_spawn_point select 1],"BLACK IN"];
+	titleText[format["%2 %1",life_spawn_point select 1,localize "STR_Spawn_Spawned"],"BLACK IN"];
 };
+
+if(life_firstSpawn) then {
+	life_firstSpawn = false;
+	[] call life_fnc_welcomeNotification;
+};
+player say2d "Intro";
 
 [] call life_fnc_hudSetup;

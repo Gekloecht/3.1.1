@@ -73,7 +73,7 @@ _lightright setLightFlareSize 0.38;
 _lightright setLightFlareMaxDistance 120;
 _lightright setLightUseFlare true;
 
-//Sirene le jour
+//ARE YOU ALL HAPPY?!?!?!?!?!?!?!?!?%#?@WGD?TGD?BN?ZDHBFD?GA
 _lightleft setLightDayLight true;
 _lightright setLightDayLight true;
 

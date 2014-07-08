@@ -27,10 +27,7 @@ switch (_filter) do
 		["U_IG_Guerilla2_3","The Outback Rangler",1200],
 		["U_C_HunterBody_grn","The Hunters Look",1500],
 		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
-		["U_OrestesBody","Surfing On Land",1100],
-		["U_NikosAgedBody","Costard cravate",5000],
-		["U_C_WorkerCoveralls","Tenue de garagiste",5000],
-		["U_C_Journalist","Tenue de journaliste",10000]
+		["U_OrestesBody","Surfing On Land",1100]
 		];
 	};
 	
@@ -44,8 +41,7 @@ switch (_filter) do
 			["H_Bandanna_khk","Khaki Bandanna",145],
 			["H_Bandanna_sgg","Sage Bandanna",160],
 			["H_StrawHat","Straw Fedora",225],
-			["H_BandMask_blk","Hat & Bandanna",300],
-			["H_Cap_press","Casquette de journaliste",3000]
+			["H_BandMask_blk","Hat & Bandanna",300]
 		];
 	};
 	
@@ -70,8 +66,7 @@ switch (_filter) do
 	{
 		[
 			["V_PlateCarrierIA1_dgtl",nil,2500],
-			["V_PlateCarrierIA2_dgtl",nil,1500],
-			["V_Press_F","Gilet de journaliste",50000]
+			["V_PlateCarrierIA2_dgtl",nil,1500]
 		];
 	};
 	

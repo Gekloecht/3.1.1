@@ -25,4 +25,3 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 	life_cash = life_cash - (_price * _amount);
 	[] call life_fnc_virt_update;
 };
-playSound "caching";

@@ -35,8 +35,8 @@ if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL)) then {
 				_box setVariable["storage", (_x select 3), true];
 				_box setVariable["Trunk", [[],0], true];
 				_box setVariable["owner", getPlayerUID player, true];
-				_box setPosATL [_pos select 0, (_pos select 1), _pos select 2];
-				_box allowdamage false;
+				_box allowDamage false;//added 05/13/2014
+				_box setPosATL [_pos select 0, (_pos select 1), _pos select 2];	
 				
 				clearWeaponCargoGlobal _box; 
 				clearMagazineCargoGlobal _box;

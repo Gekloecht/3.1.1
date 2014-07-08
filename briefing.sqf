@@ -1,16 +1,15 @@
 waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
-player createDiarySubject ["sealteamsloth","altislifefr.com"];
 player createDiarySubject ["changelog","Change Log"];
-player createDiarySubject ["serverrules","Regles Generales"];
-player createDiarySubject ["policerules","Regles Policiers"];
-player createDiarySubject ["safezones","Zones Safe"];
+player createDiarySubject ["serverrules","General Rules"];
+player createDiarySubject ["policerules","Police Procedures/Rules"];
+player createDiarySubject ["safezones","Safe Zones (No Killing)"];
 //player createDiarySubject ["civrules","Civilian Rules"];
-player createDiarySubject ["illegalitems","Activites Illegales"];
+player createDiarySubject ["illegalitems","Illegal Activity"];
 //player createDiarySubject ["gangrules","Gang Rules"];
 //player createDiarySubject ["terrorrules","Terrorism Rules"];
-player createDiarySubject ["controls","Controles"];
+player createDiarySubject ["controls","Controls"];
 
 /*  Example
 	player createDiaryRecord ["", //Container
@@ -24,9 +23,18 @@ player createDiarySubject ["controls","Controles"];
 */
 	player createDiaryRecord["changelog",
 		[
-			"Bug / Feature Tracker",
+			"Official Change Log",
 				"
-					The change log can be found on www.sealteamsloth.com or http://rm.iamtonic.co/projects/altis-life/roadmap
+					The official change log can be found on the BIS forums (search Altis Life RPG)
+				"
+		]
+	];
+	
+	player createDiaryRecord["changelog",
+		[
+			"Custom Change Log",
+				"
+					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
 				"
 		]
 	];
@@ -505,18 +513,18 @@ player createDiarySubject ["controls","Controles"];
 	
 // Controls Section
 
-
 	player createDiaryRecord ["controls",
 		[
 			"",
 				"
 				Y: Ouvrir Menu Joueur<br/>
-				U: Déverouiller/Vérouiller son véhicule<br/>
-				F: Sirène (Si policier)<br/>
-				T: Coffre du véhicule<br/>
-				H: Mettre les mains derrière la tête<br/>
-				Left Shift + R: Restrain (Si policier)<br/>
-				Left Shift + G: Assommer (Civil uniquement)<br/>
+				U: Verouiller/Déverouiller Voiture<br/>
+				F: Sirène Police/Ambulance (Si Medecin ou Policier)<br/>
+				T: Coffre Vehicule<br/>
+				Left Shift + R: Menotter (Si Policier)<br/>
+				Left Shift + G: Assomer (Si Civil)<br/>
+				Windows Gauche: Touche d'interaction principale pour prendre objet/argent, intéragir avec les voitures (Réparer,etc) et intéragir avec les civils pour les policiers. Peut être modifiée ESC->Configurer->Controles->Personnalisé->Touche Utilisateur 10<br/>
+				Left Shift + L: Gyrophares (Si Medecin ou Policier).<br/>
 				"
 		]
 	];

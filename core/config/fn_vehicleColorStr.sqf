@@ -1,7 +1,7 @@
 /*
 	File: fn_vehicleColorStr.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Master configuration for color strings depending on their index location.
 */
@@ -12,6 +12,14 @@ _color = "";
 
 switch (_vehicle) do
 {
+	case "I_Heli_light_03_unarmed_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Police";};
+		};
+	};
+	
 	case "I_G_Offroad_01_F" :
 	{
 		switch (_index) do
@@ -20,7 +28,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red Bull";};
 		};
 	};
-	
+
 	case "C_Offroad_01_F" :
 	{
 		switch (_index) do
@@ -40,9 +48,10 @@ switch (_vehicle) do
 			case 12: {_color = "Brun";};
 			case 13: {_color = "Noir";};
 			case 14: {_color = "Depanneuse"};
+			case 15: {_color = "Medecin"};
 		};
 	};
-	
+
 	case "C_Hatchback_01_F":
 	{
 		switch (_index) do
@@ -57,7 +66,7 @@ switch (_vehicle) do
 			case 7: {_color = "Black"};
 		};
 	};
-	
+
 	case "C_Hatchback_01_sport_F":
 	{
 		switch(_index) do
@@ -72,7 +81,7 @@ switch (_vehicle) do
 			case 7: {_color = "Red Waves"};
 		};
 	};
-	
+
 	case "C_SUV_01_F":
 	{
 		switch (_index) do
@@ -89,9 +98,10 @@ switch (_vehicle) do
 			case 9: {_color = "NB Sport V2";};
 			case 10: {_color = "Rouge Sport";};
 			case 11: {_color = "Taxi";};
+			case 12: {_color = "Medecin"};
 		};
 	};
-	
+
 	case "C_Van_01_box_F":
 	{
 		switch (_index) do
@@ -100,7 +110,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-	
+
 	case "C_Van_01_transport_F":
 	{
 		switch (_index) do
@@ -109,7 +119,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-	
+
 	case "C_Van_01_fuel_F":
 	{
 		switch (_index) do
@@ -118,7 +128,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-	
+
 	case "B_Quadbike_01_F" :
 	{
 		switch (_index) do
@@ -134,7 +144,7 @@ switch (_vehicle) do
 			case 8: {_color = "Rebel Camo"};
 		};
 	};
-	
+
 	case "B_Heli_Light_01_F":
 	{
 		switch (_index) do
@@ -153,20 +163,24 @@ switch (_vehicle) do
 			case 11: {_color = "Vrana"};
 			case 12: {_color = "Waves Blue"};
 			case 13: {_color = "Rebel Digital"};
+			case 14: {_color = "Gray"};
+			case 15: {_color = "Shadow"};
+			case 16: {_color = "Wasp"};
 		};
 	};
-	
+
 	case "O_Heli_Light_02_unarmed_F":
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Black"};
-			case 1: {_color = "White / Blue"};
-			case 2: {_color = "Digi Green"};
-			case 3: {_color = "Desert Digi"};
+			case 0: {_color = "Noir"};
+			case 1: {_color = "Blanc / Bleu"};
+			case 2: {_color = "Foret Digital"};
+			case 3: {_color = "Desert Digital"};
+			case 4: {_color = "Medecin"};
 		};
 	};
-	
+
 	case "B_MRAP_01_F":
 	{
 		switch (_index) do
@@ -175,7 +189,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-	
+
 	case "I_Truck_02_covered_F":
 	{
 		switch (_index) do
@@ -184,7 +198,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-	
+
 	case "I_Truck_02_transport_F":
 	{
 		switch (_index) do
@@ -193,7 +207,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-	
+
 	case "B_APC_Wheeled_01_cannon_F":
 	{
 		switch (_index) do
@@ -201,7 +215,7 @@ switch (_vehicle) do
 			case 0: {_color = "Black"};
 		};
 	};
-	
+
 	case "O_Heli_Attack_02_black_F":
 	{
 		switch (_index) do
@@ -209,7 +223,7 @@ switch (_vehicle) do
 			case 0: {_color = "Black"};
 		};
 	};
-	
+
 	case "I_Heli_Transport_02_F":
 	{
 		switch (_index) do
@@ -218,7 +232,7 @@ switch (_vehicle) do
 			case 1: {_color = "Dahoman"};
 		};
 	};
-	
+
 	case "B_APC_Wheeled_01_cannon_F":
 	{
 		switch (_index) do

@@ -13,8 +13,8 @@ if(side _unit == west) exitWith {};
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
 //Broadcast!
+player say3D "cuff";
 
 _unit setVariable["restrained",true,true];
 [[player], "life_fnc_restrain", _unit, false] spawn life_fnc_MP;
-[[0,format["%1 was restrained by %2", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-playSound "cuff";
+[[0,format["%1 a été arreté par %2", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;

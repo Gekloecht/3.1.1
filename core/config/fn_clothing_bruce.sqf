@@ -37,10 +37,10 @@ switch (_filter) do
 			["U_OrestesBody","Surfing On Land",1100],
 			["U_NikosAgedBody","Costard cravate",5000],
 			["U_C_WorkerCoveralls","Tenue de garagiste",5000]
-			
+
 		];
 	};
-	
+
 	//Hats
 	case 1:
 	{
@@ -71,10 +71,10 @@ switch (_filter) do
 			["H_Watchcap_sgg",nil,50],
 			["H_Watchcap_camo",nil,50],
 			["H_Hat_checker",nil,50]
-			
+
 		];
 	};
-	
+
 	//Glasses
 	case 2:
 	{
@@ -94,15 +94,18 @@ switch (_filter) do
 			["G_Combat",nil,55]
 		];
 	};
-	
+
 	//Vest
 	case 3:
 	{
 		[
-			["V_BandollierB_cbr",nil,4500]
+			["V_BandollierB_cbr",nil,4500],
+			["V_BandollierB_khk",nil,4500],
+			["V_BandollierB_rgr",nil,4500],
+			["V_BandollierB_blk",nil,4500]
 		];
 	};
-	
+
 	//Backpacks
 	case 4:
 	{

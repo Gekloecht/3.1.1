@@ -10,7 +10,7 @@ _sum = ["artefact",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDif
 
 if(_sum > 0) then
 {
-life_action_in_use = true;
+life_action_inUse = true;
 titleText["Recherche d'artefact","PLAIN"];
 titleFadeOut 5;
 sleep 5;
@@ -21,4 +21,4 @@ titleText["Vous trouvez un artefact.","PLAIN"];
 };
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

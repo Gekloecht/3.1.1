@@ -1,7 +1,7 @@
 /*
 	File: fn_itemWeight.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Gets the items weight and returns it.
 */
@@ -47,7 +47,9 @@ switch (_item) do
 	case "diamondc": {5};
 	case "cocaine": {6};
 	case "cocainep": {4};
-	case "spikeStrip": {15};
+	case "spikeStrip": {10};
+	case "barriere": {1};
+	case "cone": {1};
 	case "rock": {5};
 	case "cement": {4};
 	case "goldbar": {12};

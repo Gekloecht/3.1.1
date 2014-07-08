@@ -21,17 +21,17 @@ if (_house isKindOf "House") then
 	_buildingName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 	_numDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
 	_type = typeOf _house;
-	if (_numDoors < 1) exitWith {hint "You can't lock a building with no doors!";};
+	if (_numDoors < 1) exitWith {hint "Impossible de verrouiller un bâtiment ne contenant pas de fenêtre !";};
 	
 	if (_isLocked == 1) then
 	{
 		_isLocked = 0;
-		hint format["Déverrouillage de %1.", _buildingName];
+		hint format["Déverrouillage de toutes les portes de %1.", _buildingName];
 	}
 	else
 	{
 		_isLocked = 1;
-		hint format["Verrouillage de %1.", _buildingName];
+		hint format["Verrouillage de toutes les portes de %1.", _buildingName];
 	};
 	_house setVariable["life_locked", _isLocked, true];
 	

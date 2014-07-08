@@ -9,9 +9,10 @@ _sum = ["ephedrine",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDi
 
 if(_sum > 0) then
 {
-life_action_in_use = true;
+life_action_inUse = true;
 titleText["Recolte d'ephedrine...","PLAIN"];
 titleFadeOut 5;
+player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 sleep 5;
 if(([true,"ephedrine",1] call life_fnc_handleInv)) then
 {
@@ -20,4 +21,4 @@ titleText["Ephedrine recoltee.","PLAIN"];
 };
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

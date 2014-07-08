@@ -14,6 +14,7 @@ life_session_completed = false;
 life_garage_store = false;
 life_session_tries = 0;
 life_net_dropped = false;
+life_truckreverse_active = false;
 life_hit_explosive = false;
 life_siren_active = false;
 life_clothing_filter = 0;
@@ -24,9 +25,17 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
-life_respawn_timer = 35;
+life_respawn_timer = 1; //Scaled in minutes
 life_has_insurance = false;
 life_knockout = false;
+life_interrupted = false;
+life_respawned = false;
+life_removeWanted = false;
+
+//Revive constant variables.
+__CONST__(life_revive_cops,TRUE); //Set to false if you don't want cops to be able to revive downed players.
+__CONST__(life_revive_fee,10000);
+
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -69,11 +78,11 @@ life_delivery_in_progress = false;
 life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
-life_paycheck_period = 5; //Five minutes
+__CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
-life_impound_car = 2000;
-life_impound_boat = 3000;
-life_impound_air = 5000;
+__CONST__(life_impound_car,2500);
+__CONST__(life_impound_boat,5000);
+__CONST__(life_impound_air,7500);
 life_istazed = false;
 life_my_gang = ObjNull;
 
@@ -83,13 +92,18 @@ switch (playerSide) do
 {
 	case west: 
 	{
-		life_atmcash = 10000; //Starting Bank Money
-		life_paycheck = 4000; //Paycheck Amount
+		life_atmcash = 7000; //Starting Bank Money
+		life_paycheck = 5000; //Paycheck Amount
 	};
 	case civilian: 
 	{
-		life_atmcash = 10000; //Starting Bank Money
-		life_paycheck = 1000; //Paycheck Amount
+		life_atmcash = 15000; //Starting Bank Money
+		life_paycheck = 2500; //Paycheck Amount
+	};
+	
+	case independent: {
+		life_atmcash = 6500;
+		life_paycheck = 2500;
 	};
 };
 
@@ -138,6 +152,8 @@ life_inv_items =
 	"life_inv_cokep",
 	"life_inv_diamondr",
 	"life_inv_spikeStrip",
+	"life_inv_barriere",
+	"life_inv_cone",
 	"life_inv_rock",
 	"life_inv_cement",
 	"life_inv_goldbar",
@@ -184,7 +200,8 @@ life_licenses =
 	["license_civ_grapes","civ"],
 	["license_civ_moonshine","civ"],
 	["license_civ_presse","civ"],
-	["license_civ_tbs","civ"]
+	["license_civ_tbs","civ"],
+	["license_med_air","med"]
 ];
 
 //Setup License Variables
@@ -241,7 +258,6 @@ sell_array =
 	["artefact",1500],
 	["ephedrine",400],
 	["phosphore",400]
-
 ];
 __CONST__(sell_array,sell_array);
 
@@ -267,6 +283,8 @@ buy_array =
 	["fuelF",850],
 	["peach",68],
 	["spikeStrip",2500],
+	["barriere",1000],
+	["cone",100],
 	["storage1",50000],
     ["storage2",250000],
     ["phosphore",1000]
@@ -278,7 +296,6 @@ life_weapon_shop_array =
 	["arifle_sdar_F",7500],
 	["hgun_P07_snds_F",650],
 	["hgun_P07_F",1500],
-	["Binocular",50],
 	["ItemGPS",45],
 	["ToolKit",75],
 	["FirstAidKit",65],
@@ -344,11 +361,7 @@ life_garage_prices =
 	["C_Boat_Civil_01_police_F",3500],
 	["B_Boat_Armed_01_minigun_F",16500],
 	["B_SDV_01_F",25000],
-	["B_MRAP_01_F",7500],
-	["O_Truck_03_ammo_F",25000],
-	["O_Truck_03_transport_F",25000],
-	["O_Truck_03_covered_F",25000],
-	["B_Truck_01_covered_F",25000]
+	["B_MRAP_01_F",7500]
 ];
 __CONST__(life_garage_prices,life_garage_prices);
 
@@ -377,10 +390,6 @@ life_garage_sell =
 	["C_Boat_Civil_01_police_F",4950],
 	["B_Boat_Armed_01_minigun_F",21000],
 	["B_SDV_01_F",45000],
-	["B_MRAP_01_F",10000],
-	["O_Truck_03_ammo_F",250000],
-	["O_Truck_03_transport_F",250000],
-	["O_Truck_03_covered_F",250000],
-	["B_Truck_01_covered_F",250000]
+	["B_MRAP_01_F",10000]
 ];
 __CONST__(life_garage_sell,life_garage_sell);

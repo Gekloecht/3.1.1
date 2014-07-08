@@ -23,12 +23,12 @@ if (_house isKindOf "House") then
 	if (_isLocked == 1) then
 	{
 		_isLocked = 0;
-		hint format["Déverrouillage de tout les coffres de %1.", _buildingName];
+		hint format["Deverrouillage de tous les containers de %1.", _buildingName];
 	}
 	else
 	{
 		_isLocked = 1;
-		hint format["Verrouillage de tout les coffres de %1.", _buildingName];
+		hint format["Verrouillage de tous les containers de %1.", _buildingName];
 	};
 	_house setVariable["storage_locked", _isLocked, true];
 };

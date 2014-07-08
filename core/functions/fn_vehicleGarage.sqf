@@ -5,10 +5,11 @@
 	Description:
 	Handles everything that happens when you open the vehicle garage.
 */
+
 private ["_marker"];
 
-if ((player distance cursorTarget) > 5) exitWith {hint "You are too far away to use this NPC."};
-if (vehicle player != player) exitWith {hint "You cannot use this npc while in a vehicle."};
+if ((player distance cursorTarget) > 5) exitWith {hint "Tu es trop loin pour pouvoir utiliser ce PNJ."};
+if (vehicle player != player) exitWith {hint "Tu ne peux pas utiliser le PNJ tant que tu es dans un véhicule."};
 if (cursorTarget isKindOf "House") then
 {
 	_marker = format["%1", [cursorTarget] call life_fnc_getBuildID];
@@ -29,7 +30,8 @@ else
 	[_this select 0] call life_fnc_getSpawnMarker;
 };
 life_garage_type = "Car";
-[[getPlayerUID player,playerSide,life_garage_type,player],"STS_fnc_getVehicles",false,false] spawn life_fnc_MP;
+[[getPlayerUID player,playerSide,life_garage_type,player],"TON_fnc_getVehicles",false,false] spawn life_fnc_MP;
 createDialog "Life_impound_menu";
 disableSerialization;
-ctrlSetText[2802,"Fetching Vehicles...."];
+ctrlSetText[2802,"Recherche des véhicules...."];
+

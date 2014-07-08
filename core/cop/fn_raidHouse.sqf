@@ -1,18 +1,20 @@
 /*
 	Mario2002
 */
-#include <macro.h>
-private["_house","_upp","_ui","_progress","_pgText","_cP","_displayName"];
+private["_house","_upp","_ui","_progress","_pgText","_cP","_displayName","_search"];
 _house = cursorTarget;
 _numDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
 if(isNull _house) exitwith {};
+_search= {_x != player && side _x == west && alive _x && player distance _x < 100} count playableUnits > 1;
+if(!(_search)) exitWith {hint "Il n'y a pas assez de flic à proximité !"};
+sleep 3;
 
 if(_house isKindOf "House_F") then
 {
 	_owner = _house getVariable["life_homeOwnerName", []];
-	[[0,format["%1, your house is being raided by the police!", (_owner select 0)]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format["%1, votre maison est en train de subir un raid par les gendarmes!", (_owner select 0)]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
-	_upp = format["Unlocking %1",_displayName];
+	_upp = format["Déverrouillage %1",_displayName];
 	//Setup our progress bar.
 	disableSerialization;
 	5 cutRsc ["life_progress","PLAIN"];
@@ -44,5 +46,5 @@ if(_house isKindOf "House_F") then
 	{
 		_house setVariable[format["bis_disabled_Door_%1", _i], 0, true];
 	};
-	titleText["You have opened that house.","PLAIN"];
+	titleText["Vous avez ouvert cette maison.","PLAIN"];
 };

@@ -18,10 +18,10 @@ _price = [typeOf _house] call life_fnc_housePrice;
 _buildingID = [_house] call life_fnc_getBuildID;
 _buildingName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 
-if (!license_civ_home) exitWith {hint "Vous n'avez pas la license de propriétaire!";};
-if (count life_houses > 5) exitWith {hint "Vous avez droit a max 6 maisons.";};
-if (_price < 0 || _buildingID in life_public_houses || format["%1", _owners] != "[]") exitWith{hint "Cette maison n'est pas à vendre";};
-if (life_atmcash < _price) exitWith {hint format["Vous n'avez pas $%1 dans votre banque pour acheter %2",[_price] call life_fnc_numberText,_buildingName];};
+if (!license_civ_home) exitWith {hint "Tu ne disposes pas de la licence Home Owners ! Le DMV place de Kavala en vend normalement...";};
+if (count life_houses > 6) exitWith {hint "Tu ne peux être le propriétaire que de six maisons à la fois.";};
+if (_price < 0 || _buildingID in life_public_houses || format["%1", _owners] != "[]") exitWith{hint "Ce bâtiment n est pas à vendre";};
+if (life_atmcash < _price) exitWith {hint format["Tu ne disposes pas de %1€ sur ton compte en banque pour acheter %2",[_price] call life_fnc_numberText,_buildingName];};
 
 _house setVariable["life_homeOwners", [_uid], true];
 _house setVariable["containers", [], true];
@@ -30,7 +30,7 @@ _house setVariable["storage_locked", 1, true];
 //_house setVariable["Trunk", [], true];
 //_house setVariable["life_homeOwnerName", [], true];
 ["atm","take",_price] call life_fnc_updateCash;
-titleText[format["Vous avez acheté %1 for %2!", _buildingName, [_price] call life_fnc_numberText],"PLAIN"];
+titleText[format["Tu as acheté %1 pour %2!", _buildingName, [_price] call life_fnc_numberText],"PLAIN"];
 
 closeDialog 0;
 [] call life_fnc_deleteMarkers;

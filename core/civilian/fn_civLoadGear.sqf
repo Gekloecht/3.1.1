@@ -1,9 +1,9 @@
 /*
-        File: fn_civLoadGear.sqf
-        Author: Bryan "Tonic" Boardwine
-        
-        Description:
-        Loads saved civilian gear, this is limited for a reason and that's balance.
+    File: fn_civLoadGear.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Loads saved civilian gear, this is limited for a reason and that's balance.
 */
 private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
 _itemArray = civ_gear;

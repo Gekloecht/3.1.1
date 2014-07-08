@@ -20,6 +20,7 @@ _pInv = (findDisplay 8500) displayCtrl 8503;
 	_shift = _this select 2;
 	_ctrlKey = _this select 3;
 	_alt = _this select 4;
+	/*
 	switch (_code) do
 	{
 		hint str _code;
@@ -27,6 +28,7 @@ _pInv = (findDisplay 8500) displayCtrl 8503;
 			[] call life_fnc_preCloseHouseStorage;
 		};
 	};
+	*/
 }];
 lbClear _tInv;
 lbClear _pInv;
@@ -43,7 +45,7 @@ _house_data = [_weight, _used];
 
 if(_house_data select 0 == -1) exitWith {closeDialog 0};
 
-ctrlSetText[8504,format["Weight: %1/%2",_house_data select 1,_house_data select 0]];
+ctrlSetText[8504,format["Poids : %1/%2",_house_data select 1,_house_data select 0]];
 _data = _house getVariable ["Trunk",[]];
 if(count _data == 0) then {_house setVariable["Trunk",[[],0],true]; _data = [];} else {_data = _data select 0;};
 //Player Inventory Items

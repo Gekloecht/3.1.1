@@ -26,4 +26,9 @@ if(life_is_arrested) then
 	waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 	waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 };
+
+[] execVM "msgbienvenueCiv.sqf";
 player addRating 9999999;
+
+[] call life_fnc_zoneCreator;
+[] call life_fnc_copUniform; // Line added for Cop Uniforms

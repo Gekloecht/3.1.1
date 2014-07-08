@@ -56,9 +56,6 @@ switch (playerSide) do
 	
 	case civilian:
 	{
-		// add this to your session
-        life_houses = (_session select 9);
-        life_houses_markers = [];
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
 		life_cash = parseNumber(_session select 2);
 		life_atmcash = parseNumber(_session select 3);
@@ -73,7 +70,18 @@ switch (playerSide) do
 		__CONST__(life_donator,parseNumber(_session select 7));
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
+		life_houses = (_session select 9);
+        life_houses_markers = [];
 		__CONST__(life_coplevel,0);
+	};
+	
+	case independent: {
+		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data returned didn't match, was it meant for someone else?
+		life_cash = parseNumber(_session select 1);
+		life_atmcash = parseNumber(_session select 2);
+		__CONST__(life_medicLevel,parseNumber(_session select 3));
+		__CONST__(life_donator,parseNumber(_session select 4));
+		__CONST__(life_adminlevel,parseNumber(_session select 5));
 	};
 };
 
@@ -85,6 +93,6 @@ switch(__GETC__(life_donator)) do
 };
 
 if((getPlayerUID player) != (_session select 0)) exitWith {[] spawn life_fnc_sessionCreate;}; //Since it didn't match create the session again?
-cutText["Received information from server and validated it, you are almost ready.","BLACK FADED"];
-0 cutFadeOut 9999999;
+//cutText["Received information from server and validated it, you are almost ready.","BLACK FADED"];
+//0 cutFadeOut 9999999;
 life_session_completed = true;

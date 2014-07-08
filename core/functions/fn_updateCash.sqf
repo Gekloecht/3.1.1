@@ -14,7 +14,7 @@ if ((life_cashCache != (life_cash / 2) + 5) || (life_atmCashCache != (life_atmCa
 {
 	[] spawn 
 	{
-		[[1, format["The Asylum server has detected %1 (ID %2) hacking money. Please report this to an administrator.", name player, getPlayerUID player]],"life_fnc_broadcast",nil,false] spawn BIS_fnc_MP;
+		[[1, format["Le serveur Involved a détecté %1 (ID %2) en train de dupli du fric. Merci de le rapporter à un administrateur.", name player, getPlayerUID player]],"life_fnc_broadcast",nil,false] spawn BIS_fnc_MP;
 		sleep 3;
 		endMission "Loser";
 	};

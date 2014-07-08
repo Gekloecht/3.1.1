@@ -5,11 +5,66 @@
 	Description:
 	Used for loading cop saved gear loadout.
 */
-private["_loadout","_primary","_launcher","_handgun","_magazines","_uniform","_primitems","_secitems","_handgunitems","_backpack","_items","_vest","_goggles","_headgear","_uItems","_bItems","_vItems","_handle"];
+private["_allowedItems","_loadout","_primary","_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_handle"];
 _loadout = cop_gear;
+
+_allowedItems =
+[
+						"arifle_sdar_F",
+						"20Rnd_556x45_UW_mag",
+						"hgun_P07_snds_F",
+						"16Rnd_9x21_Mag",
+						"hgun_ACPC2_F",
+						"9Rnd_45ACP_Mag",
+						"SMG_02_F",
+						"30Rnd_9x21_Mag",
+						"arifle_MX_Black_F",
+						"arifle_MXC_Black_F",
+						"arifle_MXM_Black_F",
+						"30Rnd_65x39_caseless_mag",
+						"srifle_EBR_F",
+						"20Rnd_762x51_Mag",
+						"LMG_Mk200_F",
+						"200Rnd_65x39_cased_Box",
+						"srifle_LRR_F",
+						"7Rnd_408_Mag",
+						"acc_flashlight",
+						"optic_Holosight",
+						"optic_ACO_grn_smg",
+						"optic_Aco_smg",
+						"optic_ACO_grn",
+						"optic_Aco",
+						"optic_MRCO",
+						"optic_Hamr", 
+						"optic_Arco",														
+						"optic_LRPS",
+						"optic_SOS",
+						"optic_tws",
+						"B_UavTerminal",
+						"acc_pointer_IR",							
+						"optic_DMS",
+						"MiniGrenade",
+						"SmokeShell"
+];
+
+
 
 if(isNil "_loadout") exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
 if(count _loadout == 0) exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
+_primary = _loadout select 0;
+_launcher = "";
+_handgun = _loadout select 1;
+_magazines = _loadout select 2;
+_uniform = _loadout select 3;
+_vest = _loadout select 4;
+_backpack = _loadout select 5;
+_items = _loadout select 6;
+_primitems = _loadout select 7;
+_secitems = _loadout select 8;
+_handgunitems = _loadout select 9;
+_uitems = _loadout select 10;
+_vitems = _loadout select 11;
+_bitems = _loadout select 12;
 
 //Strip the unit down
 RemoveAllWeapons player;
@@ -24,29 +79,10 @@ removeHeadGear player;
 	player removeItem _x;
 } foreach (assignedItems player);
 
-_primary = [_loadout,0,"",[""]] call BIS_fnc_param;
-_launcher = [_loadout,1,"",[""]] call BIS_fnc_param;
-_handgun = [_loadout,2,"",[""]] call BIS_fnc_param;
-_magazines = [_loadout,3,[],[[]]] call BIS_fnc_param;
-_uniform = [_loadout,4,"",[""]] call BIS_fnc_param;
-_vest = [_loadout,5,"",[""]] call BIS_fnc_param;
-_backpack = [_loadout,6,"",[""]] call BIS_fnc_param;
-_items = [_loadout,7,[],[[]]] call BIS_fnc_param;
-_primitems = [_loadout,8,[],[[]]] call BIS_fnc_param;
-_secitems = [_loadout,9,[],[[]]] call BIS_fnc_param;
-_handgunitems = [_loadout,10,[],[[]]] call BIS_fnc_param;
-_uItems = [_loadout,11,[],[[]]] call BIS_fnc_param;
-_vItems = [_loadout,12,[],[[]]] call BIS_fnc_param;
-_bItems = [_loadout,13,[],[[]]] call BIS_fnc_param;
-_headgear = [_loadout,14,"",[""]] call BIS_fnc_param;
-_goggles = [_loadout,15,"",[""]] call BIS_fnc_param;
-
 //Add the gear
 if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_goggles != "") then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 {
 	_handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
 	waitUntil {scriptDone _handle};
@@ -69,15 +105,9 @@ if(primaryWeapon player != "") then
 	player selectWeapon (primaryWeapon player);
 };
 
-uniform_1 addAction ["Uniforme Policier","policier.sqf"];
-uniform_1 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_2 addAction ["Uniforme Policier","policier.sqf"];
-uniform_2 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_3 addAction ["Uniforme Policier","policier.sqf"];
-uniform_3 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_4 addAction ["Uniforme Policier","policier.sqf"];
-uniform_4 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-patrolcop addAction ["Stop patrol mission","patrolmission\removepatrol.sqf"];
-patrolcop addAction ["Get patrol mission","patrolmission\startpatrol.sqf"];
-patrolcop_1 addAction ["Stop patrol mission","patrolmission\removepatrol.sqf"];
-patrolcop_1 addAction ["Get patrol mission","patrolmission\startpatrol.sqf"];
+// Code Added for Cop Uniform script
+
+removeUniform player;
+
+player addUniform "U_Rangemaster";
+[] call life_fnc_copUniform; // Line added for cop uniforms

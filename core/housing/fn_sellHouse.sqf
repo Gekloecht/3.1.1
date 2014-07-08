@@ -19,7 +19,7 @@ _buildingID = [_house] call life_fnc_getBuildID;
 _buildingName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 _price = _price * 0.75; // 75% of buy price for sale
 
-if (!(_uid in _owners)) exitWith {hint "You do not own this property!";};
+if (!(_uid in _owners)) exitWith {hint "Tu n es pas le propriétaire de cette maison !";};
 
 _owners = _owners - [_uid];
 _house setVariable["life_homeOwners", _owners, true];
@@ -29,7 +29,7 @@ _house setVariable["containers", [], true];
 _house setVariable["Trunk", [], true];
 _house setVariable["life_homeOwnerName", [], true];
 ["atm","add",_price] call life_fnc_updateCash;
-titleText[format["You have sold %1 for $%2!", _buildingName, [_price] call life_fnc_numberText],"PLAIN"];
+titleText[format["Tu as vendu %1 pour %2€ !", _buildingName, [_price] call life_fnc_numberText],"PLAIN"];
 
 closeDialog 0;
 

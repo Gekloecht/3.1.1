@@ -9,15 +9,16 @@ _sum = ["cannabis",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDif
 
 if(_sum > 0) then
 {
-	life_action_in_use = true;
-	titleText["Gathering Cannabis...","PLAIN"];
+	life_action_inUse = true;
+	titleText["Collecte de Cannabis...","PLAIN"];
 	titleFadeOut 5;
+	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	sleep 5;
 	if(([true,"cannabis",1] call life_fnc_handleInv)) then
 	{
-		titleText["You have collected some Cannabis.","PLAIN"];
+		titleText["Vous ramassez du Cannabis.","PLAIN"];
 		playSound "bag";
 	};
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

@@ -8,13 +8,13 @@
 private["_house","_veh_data"];
 if(dialog) exitWith {};
 _house = cursorTarget;//[_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-if(isNull _house OR (count (_house getVariable["containers", []]) < 1)) exitWith {systemChat "Bad House";}; //Either a null or invalid vehicle type.
+if(isNull _house OR (count (_house getVariable["containers", []]) < 1)) exitWith {systemChat "Aucun Container";}; //Either a null or invalid vehicle type.
 
-if((_house getVariable ["trunk_in_use",false])) exitWith {hint "This storage is in use, only one person can use it at a time."};
+if((_house getVariable ["trunk_in_use",false])) exitWith {hint "Ce container est en cours d utilisation, seule une perosnne peut s en servir à la fois."};
 _house setVariable["trunk_in_use",true,true];
-if(!createDialog "TrunkHouseMenu") exitWith {"Failed Creating Dialog";}; //Couldn't create the menu?
+if(!createDialog "TrunkHouseMenu") exitWith {"Echec de création de la fenêtre de dialogue";}; //Couldn't create the menu?
 disableSerialization;
-ctrlSetText[8501,format["House Trunk - %1",getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName")]];
+ctrlSetText[8501,format["Rangement Maison - %1",getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName")]];
 
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],-1]]) select 1;
@@ -29,7 +29,7 @@ _veh_data = [_weight, _used];
 
 if(_veh_data select 0 == -1) exitWith {closeDialog 0;hint "close dialog";};
 
-ctrlSetText[8504,format["Weight: %1/%2",_veh_data select 1,_veh_data select 0]];
+ctrlSetText[8504,format["Poids : %1/%2",_veh_data select 1,_veh_data select 0]];
 
 [_house] call life_fnc_houseInventory;
 life_trunk_vehicle = _house;

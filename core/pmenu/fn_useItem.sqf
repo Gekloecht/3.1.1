@@ -21,11 +21,6 @@ switch (true) do
 		};
 	};
 	
-	case (_item in ["storage1","storage2"]):
-    {
-        [_item] call life_fnc_placeStorage;
-    };
-	
 	case (_item == "redgull"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -52,10 +47,22 @@ switch (true) do
 		};
 	};
 	
-	case (_item == "fuelF"):
+	case (_item == "barriere"):
 	{
-		if(vehicle player != player) exitWith {hint "You can't refuel the vehicle while in it!"};
-		[] spawn life_fnc_jerryRefuel;
+		if(!isNull life_barriere) exitWith {hint "Vous deployez déjà une barrière"};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_barriere;
+		};
+	};
+	
+	case (_item == "cone"):
+	{
+		if(!isNull life_cone) exitWith {hint "Vous deployez déjà un cône."};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_cone;
+		};
 	};
 	
 	case (_item == "marijuana"):
@@ -65,7 +72,7 @@ switch (true) do
         	[] spawn life_fnc_weed;
 		 };
 	};
-	
+
 	case (_item == "heroinp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -81,7 +88,7 @@ switch (true) do
 			[] spawn life_fnc_cocaine;
 		};
 	};
-	
+
 	case (_item == "methp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -89,7 +96,7 @@ switch (true) do
 			[] spawn life_fnc_meth;
 		};
 	};
-	
+
 	case (_item == "moonshine"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -97,12 +104,26 @@ switch (true) do
 			[] spawn life_fnc_alcool;
 		};
 	};
-	
+
 	case (_item == "vodka"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_alcool;
+		};
+	};
+	
+	case (_item == "fuelF"):
+	{
+		if(vehicle player != player) exitWith {hint "You can't refuel the vehicle while in it!"};
+		[] spawn life_fnc_jerryRefuel;
+	};
+	
+	case (_item == "marijuana"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn fnc_drugweed_use;
 		};
 	};
 	
@@ -114,7 +135,6 @@ switch (true) do
 	case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach"]):
 	{
 		[_item] call life_fnc_eatFood;
-		playSound "eat";
 	};
 	
 	case "fishing":
@@ -126,6 +146,11 @@ switch (true) do
 	{
 		[] spawn life_fnc_pickAxeUse;
 	};
+	
+	case (_item in ["storage1","storage2"]):
+    {
+        [_item] call life_fnc_placeStorage;
+    };
 	
 	default
 	{

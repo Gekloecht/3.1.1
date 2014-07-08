@@ -7,7 +7,8 @@ class Life_Clothing {
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			//colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {0.45,0.45,0.45,0.98};
 			idc = -1;
 			x = -0.30;
 			y = 0;
@@ -52,7 +53,7 @@ class Life_Clothing {
 		class CloseButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Annuler";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = -0.14;
 			y = 0.54 - (1 / 25);
@@ -63,7 +64,7 @@ class Life_Clothing {
 		class BuyButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Acheter";
+			text = "$STR_Global_Buy";
 			onButtonClick = "[] call life_fnc_buyClothes;";
 			x = -0.30;
 			y = 0.54 - (1 / 25);

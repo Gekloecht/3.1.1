@@ -10,9 +10,10 @@ _sum = ["heroinu",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff
 
 if(_sum > 0) then
 {
-	life_action_in_use = true;
+	life_action_inUse = true;
 	titleText["Gathering Heroin...","PLAIN"];
 	titleFadeOut 5;
+	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	sleep 5;
 	if(([true,"heroinu",1] call life_fnc_handleInv)) then
 	{
@@ -21,4 +22,4 @@ if(_sum > 0) then
 	};
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

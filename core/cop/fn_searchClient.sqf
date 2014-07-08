@@ -5,20 +5,11 @@
 	Description:
 	Searches the player and he returns information back to the player.
 */
-private["_cop","_licenses","_inv","_var","_val","_robber"];
+private["_cop","_inv","_var","_val","_robber"];
 _cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
-_licenses = "";
 _inv = [];
 _robber = false;
-//Licenses
-{
-	if(missionNamespace getVariable (_x select 0) && _x select 1 == "civ") then
-	{
-		_licenses = _licenses + ([_x select 0] call life_fnc_varToStr) + "<br/>";
-	};
-} foreach life_licenses;
-
 //Illegal items
 {
 	_var = [_x select 0,0] call life_fnc_varHandle;
@@ -26,11 +17,9 @@ _robber = false;
 	if(_val > 0) then
 	{
 		_inv set[count _inv,[_x select 0,_val]];
+		[false,(_x select 0),_val] call life_fnc_handleInv;
 	};
-	missionNamespace setVariable[_var,0];
 } foreach life_illegal_items;
-
-if(_licenses == "") then {_licenses = "Aucune Licences<br/>"};
 
 if(!life_use_atm) then 
 {
@@ -38,4 +27,4 @@ if(!life_use_atm) then
 	_robber = true;
 };
 
-[[player,_licenses,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
+[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

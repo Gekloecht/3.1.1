@@ -6,8 +6,8 @@
         Description:
         Gathers heroin?
 */
-if(life_action_in_use) exitWith {hint "Vous ne pouvez pas utiliser rapidement les touches d'actions!"};
-life_action_in_use = true;
+if(life_action_inUse) exitWith {hint "Vous ne pouvez pas utiliser rapidement les touches d'actions!"};
+life_action_inUse = true;
 private["_sum","_rand"];
 
 _rand=floor(random 3)+1;
@@ -30,4 +30,4 @@ if(_sum > 0) then
 	};
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

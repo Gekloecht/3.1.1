@@ -3,11 +3,11 @@
 */
 private["_vehicle","_vehicleInfo","_value"];
 _vehicle = cursorTarget;
-if(isNull _vehicle) exitWith {hint "There is no house"};
+if(isNull _vehicle) exitWith {hint "Il n y a pas de maison ciblée"};
 if(!(_vehicle isKindOf "House_F")) exitWith {};
 
 _vehicleInfo = _vehicle getVariable ["Trunk",[]];
-if(count _vehicleInfo == 0) exitWith {hint "This house is empty"};
+if(count _vehicleInfo == 0) exitWith {hint "Cette maison est vide"};
 
 _value = 0;
 {
@@ -27,11 +27,11 @@ _value = 0;
 
 if(_value > 0) then
 {
-	[[0,format["A house was searched and has $%1 worth of drugs / contraband.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format["La fouille d'une maison a été effectuée par les gendarmes, ils ont saisi une quantité de marchandise de contrebande d'une valeur de %1€.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_atmcash = life_atmcash + _value;
 	_vehicle setVariable["Trunk",[[],0],true];
 }
 	else
 {
-	hint "Nothing illegal in this house.";
+	hint "Aucune substance illicite dans cette maison.";
 };

@@ -6,48 +6,31 @@
 	Description:
 	Cop Initialization file.
 */
+private["_end"];
 player addRating 9999999;
 waitUntil {!(isNull (findDisplay 46))};
-[] spawn life_fnc_copMarkers;
-
+_end = false;
 if(life_blacklisted) exitWith
 {
-	endMission "Loser";
+	["Blacklisted",false,true] call BIS_fnc_endMission;
+	sleep 30;
 };
 
-switch (true) do
-{
-	case (str(player) in ["Fed_1","Fed_2","Fed_3","Fed_4","Fed_5","_Fed_6"]):
-	{
-		if(__GETC__(life_adminlevel) < 1)then {endMission "Loser"; } else
-		{
-			private["_handle"];
-			//_handle = player execVM "core\client\fed_init.sqf";
-			//waitUntil{scriptDone _handle};
-		};
-	};
-	
-	case (!(str(player) in ["cop_1","cop_2","cop_3","cop_4"])):
-	{
-		switch (true) do
-		{
-			case(__GETC__(life_coplevel) > 0) : {}; // Do nothing
-			case (__GETC__(life_adminlevel) > 0) : {}; //Do nothing
-			default {endMission "Loser";};
-		};
+if(!(str(player) in ["cop_1","cop_2","cop_3","cop_4"])) then {
+	if((__GETC__(life_coplevel) == 0) && (__GETC__(life_adminlevel) == 0)) then {
+		["NotWhitelisted",false,true] call BIS_fnc_endMission;
+		sleep 35;
 	};
 };
-
-player setVariable["coplevel", life_coplevel, true]; // for showing rank, etc
-player setObjectTextureGlobal [0,"cop.jpg"];
 
 [] call life_fnc_spawnMenu;
+[] call life_fnc_copUniform; // Line added for Cop Uniforms
+
+if(playerSide == west) then {
+    private["_getRank"];
+    _getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; case 8: {8}; default {0};};
+    player setVariable["coplevel",_getRank,TRUE];
+};
+
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
-
-
-//Coptags
-private["_getRank"];
-_getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; case 8: {8}; default {0};};
-player setVariable["coplevel",_getRank,TRUE];
-

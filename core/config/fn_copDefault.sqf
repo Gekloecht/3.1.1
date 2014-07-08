@@ -20,7 +20,7 @@ removeHeadGear player;
 
 //Load player with default cop gear.
 player addUniform "U_Rangemaster";
-player setObjectTextureGlobal [0,"cop.jpg"];
+player addHeadgear "H_Cap_blu_POLICE";
 player addVest "V_Rangemaster_belt";
 player addMagazine "16Rnd_9x21_Mag";
 player addMagazine "16Rnd_9x21_Mag";
@@ -34,17 +34,5 @@ player assignItem "ItemMap";
 player addItem "ItemCompass";
 player assignItem "ItemCompass";
 
-uniform_1 addAction ["Uniforme Policier","policier.sqf"];
-uniform_1 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_2 addAction ["Uniforme Policier","policier.sqf"];
-uniform_2 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_3 addAction ["Uniforme Policier","policier.sqf"];
-uniform_3 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-uniform_4 addAction ["Uniforme Policier","policier.sqf"];
-uniform_4 addAction ["Uniforme Ambulancier","ambulancier.sqf"];
-patrolcop addAction ["Stop patrol mission","patrolmission\removepatrol.sqf"];
-patrolcop addAction ["Get patrol mission","patrolmission\startpatrol.sqf"];
-patrolcop_1 addAction ["Stop patrol mission","patrolmission\removepatrol.sqf"];
-patrolcop_1 addAction ["Get patrol mission","patrolmission\startpatrol.sqf"];
-
 [] call life_fnc_saveGear;
+[] call life_fnc_copUniform;
